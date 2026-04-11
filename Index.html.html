@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanzania Trip Hub — Matt & Lynn</title>
+<style>
+
+:root{
+  --kili:#1B4332;--kili-mid:#2D6A4F;--kili-light:#52B788;--kili-pale:#D8F3DC;
+  --safari:#854F0B;--safari-light:#EF9F27;--safari-pale:#FAEEDA;
+  --zanzi:#993C1D;--zanzi-light:#D85A30;--zanzi-pale:#FAECE7;
+  --flight:#3C3489;--flight-light:#7F77DD;--flight-pale:#EEEDFE;
+  --snow:#F8F9FA;--text:#1a1a1a;--muted:#6C757D;--border:#DEE2E6;
+  --green:#0F6E56;--green-pale:#E1F5EE;
+  --amber:#E9C46A;--amber-dark:#F4A261;
+  --red:#E63946;--red-pale:#FDECEA;
+  --blue:#185FA5;--blue-pale:#E6F1FB;
+  --purple:#4527A0;--purple-pale:#EDE7F6;
+  --pink:#880E4F;--pink-pale:#FCE4EC;
+  --warn:#FFF8E1;--warn-dark:#E65100;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--snow);color:var(--text);}
+
+/* HERO */
+.hero{background:var(--kili);color:white;padding:2rem 1.5rem 1.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(82,183,136,.12);}
+.hero-eye{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--kili-light);margin-bottom:6px;position:relative;z-index:1;}
+.hero-title{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:700;margin-bottom:3px;position:relative;z-index:1;}
+.hero-sub{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:1.2rem;position:relative;z-index:1;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative;z-index:1;}
+.hs{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 10px;text-align:center;}
+.hs-num{font-family:Georgia,'Times New Roman',serif;font-size:16px;font-weight:700;color:var(--kili-light);display:block;}
+.hs-label{font-size:9px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+/* PHASES */
+.phases{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;padding:.9rem 1.5rem;background:white;border-bottom:1px solid var(--border);}
+.pb{background:var(--snow);border:1.5px solid var(--border);border-radius:10px;padding:.6rem .5rem;cursor:pointer;text-align:center;transition:all .15s;}
+.pb:hover{border-color:#aaa;}
+.pb.active{border:2px solid var(--kili);background:var(--kili-pale);}
+.pb-icon{font-size:18px;display:block;margin-bottom:3px;}
+.pb-name{font-size:10px;font-weight:600;color:var(--text);}
+.pb-dates{font-size:9px;color:var(--muted);margin-top:1px;}
+
+/* TABS */
+.nav-tabs{display:flex;gap:4px;padding:.7rem 1.5rem;background:white;border-bottom:1px solid var(--border);flex-wrap:wrap;overflow-x:auto;}
+.tab-btn{font-size:12px;padding:5px 12px;background:transparent;border:1px solid var(--border);border-radius:20px;cursor:pointer;color:var(--muted);transition:all .15s;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;white-space:nowrap;}
+.tab-btn:hover{background:var(--snow);}
+.tab-btn.active{background:var(--kili);color:white;border-color:var(--kili);font-weight:600;}
+
+.main{max-width:760px;margin:0 auto;padding:1.25rem 1.5rem;}
+.panel{display:none;}.panel.active{display:block;}
+.pc{display:none;}.pc.active{display:block;}
+
+/* UTILITY BOXES */
+.success-box{background:var(--green-pale);border:1px solid var(--kili-light);border-radius:10px;padding:9px 13px;font-size:12px;color:var(--green);margin-bottom:12px;}
+.alert-box{background:var(--safari-pale);border:1px solid var(--safari-light);border-radius:10px;padding:9px 13px;font-size:12px;color:var(--safari);margin-bottom:12px;}
+.info-box{background:var(--blue-pale);border:1px solid #90CAF9;border-radius:10px;padding:9px 13px;font-size:12px;color:var(--blue);margin-bottom:12px;}
+.hl-box{background:var(--flight-pale);border:1px solid #AFA9EC;border-radius:10px;padding:9px 13px;font-size:12px;color:var(--flight);margin-bottom:12px;}
+.warn-box{background:var(--warn);border:1px solid #FFE082;border-radius:10px;padding:9px 13px;font-size:12px;color:var(--warn-dark);margin-bottom:12px;}
+.tip{background:white;border:1px solid var(--border);border-left:3px solid var(--kili-light);border-radius:8px;padding:9px 13px;font-size:12px;color:var(--muted);margin-top:.75rem;line-height:1.6;}
+.tip strong{color:var(--text);}
+
+/* TYPOGRAPHY */
+.sh{font-family:Georgia,'Times New Roman',serif;font-size:15px;font-weight:600;color:var(--kili);margin-bottom:12px;}
+.sub{font-size:11px;font-weight:600;color:var(--muted);margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em;}
+
+/* BADGES */
+.badge{font-size:9px;font-weight:600;padding:2px 7px;border-radius:8px;text-transform:uppercase;letter-spacing:.04em;}
+.b-got{background:var(--kili-pale);color:var(--kili);}
+.b-rei{background:var(--blue-pale);color:var(--blue);}
+.b-matt{background:var(--purple-pale);color:var(--purple);}
+.b-lynn{background:var(--pink-pale);color:var(--pink);}
+.b-both{background:var(--kili-pale);color:var(--kili);}
+.b-need{background:var(--red-pale);color:var(--red);}
+.b-pend{background:var(--warn);color:var(--warn-dark);}
+.b-crit{background:var(--red-pale);color:var(--red);border:1px solid #FFCDD2;}
+.b-gopro{background:#E8EAF6;color:#283593;}
+
+/* ITINERARY TABLE */
+.itin-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:1rem;}
+.itin-table th{text-align:left;font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:5px 8px;border-bottom:1px solid var(--border);}
+.itin-table td{padding:7px 8px;border-bottom:1px solid #f0f0eb;vertical-align:top;}
+.itin-table tr:hover td{background:#f8f8f6;}
+.pdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;}
+
+/* DAY CARDS */
+.dc{background:white;border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden;}
+.dh{display:flex;align-items:stretch;}
+.dn{width:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;flex-shrink:0;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:white;text-align:center;line-height:1.3;}
+.dm{flex:1;padding:10px 14px;}
+.ddate{font-size:10px;color:var(--muted);margin-bottom:2px;}
+.dact{font-size:13px;font-weight:600;color:var(--text);}
+.dhotel{font-size:11px;color:var(--muted);margin-top:3px;}
+.dbody{padding:9px 14px 11px;border-top:1px solid var(--snow);font-size:12px;color:var(--muted);line-height:1.6;}
+.dbody strong{color:var(--text);}
+.dtags{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap;}
+.dt{font-size:9px;font-weight:600;padding:2px 7px;border-radius:8px;text-transform:uppercase;}
+.dt-pool{background:#E0F7FA;color:#00695C;}
+.dt-spa{background:#F3E5F5;color:#6A1B9A;}
+.dt-lake{background:var(--flight-pale);color:var(--flight);}
+.dt-summit{background:var(--flight-pale);color:var(--flight);}
+.dt-beach{background:var(--zanzi-pale);color:var(--zanzi);}
+.dt-dive{background:var(--blue-pale);color:var(--blue);}
+.dt-cult{background:#FFF8E1;color:#E65100;}
+.dt-game{background:var(--safari-pale);color:var(--safari);}
+.dt-mig{background:#FFF3E0;color:#BF360C;}
+.dt-kili{background:var(--kili-pale);color:var(--kili);}
+
+/* HOTEL CARDS */
+.hc{background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
+.hn{font-size:14px;font-weight:600;color:var(--text);}
+.hl2{font-size:11px;color:var(--muted);margin-top:1px;margin-bottom:7px;}
+.hdesc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:7px;}
+
+/* FLIGHT CARDS */
+.fc{background:white;border:1px solid var(--border);border-left:3px solid var(--green);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;}
+.fr{font-size:14px;font-weight:600;}
+.fd{font-size:11px;color:var(--muted);margin-top:1px;margin-bottom:9px;}
+.fl{display:grid;grid-template-columns:80px 1fr 80px;align-items:center;gap:6px;margin:6px 0;}
+.lt{font-size:15px;font-weight:600;}
+.la{font-size:10px;color:var(--muted);line-height:1.4;}
+.ll2{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.lb{height:1px;width:100%;background:#ccc;}
+.li2{font-size:10px;color:var(--muted);text-align:center;}
+.lr{text-align:right;}
+.sd{text-align:center;font-size:11px;color:#aaa;padding:2px 0;}
+.fm{display:flex;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid var(--snow);flex-wrap:wrap;}
+.mi{font-size:11px;color:var(--muted);}
+.mi strong{color:var(--text);}
+.px{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+.pchip{font-size:11px;background:var(--snow);border-radius:6px;padding:3px 8px;}
+.cb{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;background:var(--green-pale);color:var(--green);}
+
+/* CHECKLIST */
+.checklist{list-style:none;}
+.checklist li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid var(--snow);font-size:13px;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li input{margin-top:2px;flex-shrink:0;accent-color:var(--kili);}
+.checklist li.done span{text-decoration:line-through;color:var(--muted);}
+.tn{font-size:11px;color:var(--muted);margin-top:2px;display:block;}
+.tt{display:inline-block;font-size:9px;padding:1px 5px;border-radius:7px;font-weight:600;margin-left:4px;vertical-align:middle;}
+.tt-u{background:var(--red-pale);color:var(--red);}
+.tt-m{background:var(--green-pale);color:var(--green);}
+.tt-h{background:var(--flight-pale);color:var(--flight);}
+.tt-a{background:var(--blue-pale);color:var(--blue);}
+
+/* PROGRESS */
+.prog-wrap{background:white;border:1px solid var(--border);border-radius:10px;padding:.9rem 1.2rem;margin-bottom:1rem;}
+.prog-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:5px;}
+.prog-track{height:6px;background:#E9ECEF;border-radius:3px;}
+.prog-fill{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--kili-mid),var(--kili-light));transition:width .4s;}
+
+/* STATS ROWS */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;}
+.sc{background:var(--snow);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;}
+.sc-num{font-size:20px;font-weight:700;color:var(--text);}
+.sc-label{font-size:10px;color:var(--muted);margin-top:1px;}
+
+/* FILTER BARS */
+.pf{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem;}
+.fb{font-size:11px;padding:4px 10px;border-radius:15px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
+.fb.active{background:var(--kili);color:white;border-color:var(--kili);font-weight:600;}
+
+/* GEAR ITEMS */
+.gear-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:8px;margin-bottom:4px;border:1px solid var(--border);background:white;transition:all .15s;}
+.gear-item:hover{border-color:#ced4da;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.gear-item.got{background:#F0FAF4;border-color:#B7E4C7;}
+.gear-item.pending-g{background:var(--warn);border-color:#FFE082;opacity:.9;}
+.gear-item.gdone .gname{text-decoration:line-through;color:var(--muted);}
+.gear-item input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--kili-mid);cursor:pointer;}
+.gbody{flex:1;}
+.gname{font-size:13px;font-weight:500;color:var(--text);line-height:1.4;}
+.gnote{font-size:11px;color:var(--muted);margin-top:2px;}
+.gbadges{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;}
+.gprice{font-size:12px;font-weight:600;color:var(--kili-mid);white-space:nowrap;margin-top:2px;}
+.gwt{font-size:11px;color:var(--muted);white-space:nowrap;}
+
+/* WEIGHT BARS */
+.wbar-wrap{margin-bottom:1rem;}
+.wbar-header{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;}
+.wbar-label{color:var(--muted);}
+.wbar-track{height:10px;background:#E9ECEF;border-radius:5px;overflow:hidden;}
+.wbar-fill{height:10px;border-radius:5px;transition:width .4s;}
+.w-ok{color:var(--green);}
+.w-warn{color:var(--warn-dark);}
+.w-over{color:var(--red);}
+
+/* WEIGHT TABLE */
+.wtable{width:100%;border-collapse:collapse;font-size:12px;}
+.wtable th{text-align:left;font-size:10px;font-weight:600;color:var(--muted);padding:5px 8px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.04em;}
+.wtable td{padding:6px 8px;border-bottom:1px solid #f5f5f2;}
+.wtable tr:last-child td{border-bottom:none;}
+.wtable .total-r td{font-weight:600;background:#f8f9fa;}
+
+/* BUDGET */
+.cat-block{background:white;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;}
+.cat-hdr{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;}
+.cat-hdr:hover{background:#f8f9fa;}
+.cat-icon{font-size:18px;width:28px;text-align:center;}
+.cat-title{font-family:Georgia,'Times New Roman',serif;font-size:14px;font-weight:600;}
+.cat-range{margin-left:auto;font-size:12px;font-weight:600;}
+.cat-toggle{font-size:11px;color:var(--muted);margin-left:6px;}
+.cat-body{display:block;}
+.cat-body.collapsed{display:none;}
+.li-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 16px;border-bottom:1px solid #f5f5f2;gap:12px;}
+.li-row:last-child{border-bottom:none;}
+.li-left{flex:1;}
+.li-name{font-size:13px;font-weight:500;color:var(--text);}
+.li-note{font-size:11px;color:var(--muted);margin-top:2px;}
+.li-badges{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;}
+.b-paid{background:var(--green-pale);color:var(--green);}
+.b-due{background:var(--safari-pale);color:var(--safari);}
+.b-tbd{background:#F1EFE8;color:#5F5E5A;}
+.li-right{text-align:right;min-width:100px;}
+.li-amount{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;}
+.li-when{font-size:10px;color:var(--muted);margin-top:2px;}
+.li-status{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:6px;margin-top:3px;}
+.s-paid{background:var(--green-pale);color:var(--green);}
+.s-due{background:var(--safari-pale);color:var(--safari);}
+.s-tbd{background:#F1EFE8;color:#5F5E5A;}
+.s-pend{background:var(--warn);color:var(--warn-dark);}
+.cat-subtotal{display:flex;justify-content:space-between;padding:9px 16px;background:#f8f9fa;font-size:12px;font-weight:600;border-top:1px solid var(--border);}
+.cat-subtotal span:last-child{color:var(--kili-mid);}
+
+/* GRAND TOTAL */
+.grand-total{background:var(--kili);color:white;border-radius:14px;padding:1.25rem 1.5rem;margin-top:1.5rem;}
+.gt-title{font-family:Georgia,'Times New Roman',serif;font-size:16px;color:var(--kili-light);margin-bottom:12px;}
+.gt-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.85);}
+.gt-row:last-child{border-bottom:none;}
+.gt-row span:last-child{color:var(--kili-light);font-weight:600;}
+.gt-row.paid span:last-child{color:#74C69D;}
+.gt-row.owed span:last-child{color:var(--amber);}
+.gt-row.total{font-size:15px;font-weight:700;color:white;padding-top:10px;margin-top:4px;border-top:1px solid rgba(255,255,255,.3);}
+.gt-row.total span:last-child{font-size:18px;color:var(--kili-light);}
+
+/* TIMELINE */
+.tl-block{position:relative;padding-left:22px;}
+.tl-block::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:1px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:12px;}
+.tl-dot{position:absolute;left:-18px;top:3px;width:10px;height:10px;border-radius:50%;}
+.tl-date{font-size:10px;color:var(--muted);}
+.tl-title{font-size:13px;font-weight:600;color:var(--text);}
+.tl-amount{font-size:12px;color:var(--kili-mid);font-weight:500;}
+.tl-note{font-size:11px;color:var(--muted);}
+.tl-sec{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:1.2rem 0 .6rem;padding-bottom:6px;border-bottom:1px solid var(--border);}
+
+/* NOTES TEXTAREA */
+.na{width:100%;min-height:80px;padding:9px 11px;font-size:13px;border:1px solid var(--border);border-radius:8px;background:white;color:var(--text);resize:vertical;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;margin-top:6px;}
+.na:focus{outline:none;border-color:#aaa;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eye">Tanzania · July 3–25, 2026</div>
+  <div class="hero-title">Tanzania Trip Hub</div>
+  <div class="hero-sub">Matt & Lynn · Group of 7 · Led by Todd Sunko · 22 nights · 10 properties</div>
+  <div class="hero-stats">
+    <div class="hs"><span class="hs-num">22</span><span class="hs-label">Nights</span></div>
+    <div class="hs"><span class="hs-num">8</span><span class="hs-label">Kili days</span></div>
+    <div class="hs"><span class="hs-num">5</span><span class="hs-label">Safari days</span></div>
+    <div class="hs"><span class="hs-num">6</span><span class="hs-label">Zanzibar days</span></div>
+  </div>
+</div>
+
+<div class="phases">
+  <div class="pb active" onclick="setPhase('ov',this)"><span class="pb-icon">🗺️</span><div class="pb-name">Overview</div><div class="pb-dates">Full trip</div></div>
+  <div class="pb" onclick="setPhase('kili',this)"><span class="pb-icon">⛰️</span><div class="pb-name">Kilimanjaro</div><div class="pb-dates">Jul 4–12</div></div>
+  <div class="pb" onclick="setPhase('safari',this)"><span class="pb-icon">🦁</span><div class="pb-name">Safari</div><div class="pb-dates">Jul 13–17</div></div>
+  <div class="pb" onclick="setPhase('zanzi',this)"><span class="pb-icon">🏖️</span><div class="pb-name">Zanzibar</div><div class="pb-dates">Jul 18–24</div></div>
+  <div class="pb" onclick="setPhase('flights',this)"><span class="pb-icon">✈️</span><div class="pb-name">Flights</div><div class="pb-dates">All confirmed ✓</div></div>
+</div>
+
+<div class="nav-tabs">
+  <button class="tab-btn active" onclick="sw('itinerary',this)">🗓 Itinerary</button>
+  <button class="tab-btn" onclick="sw('hotels',this)">🏨 Hotels</button>
+  <button class="tab-btn" onclick="sw('todo',this)">✅ To-Do</button>
+  <button class="tab-btn" onclick="sw('gear',this)">🎒 Gear</button>
+  <button class="tab-btn" onclick="sw('weight',this)">⚖️ Weight</button>
+  <button class="tab-btn" onclick="sw('budget',this)">💰 Budget</button>
+  <button class="tab-btn" onclick="sw('health',this)">💊 Health</button>
+</div>
+
+<!-- ═══ ITINERARY PANEL ═══ -->
+<div id="panel-itinerary" class="panel active">
+<div class="main">
+
+<div id="pc-ov" class="pc active">
+  <p class="sh">Complete Day-by-Day Itinerary</p>
+  <div class="success-box">Full itinerary confirmed from Todd ✓ · 22 nights · 3 phases · 10 properties</div>
+  <div class="hl-box"><strong>Do Good Day — July 5:</strong> Todd has organized a community/volunteer activity before the climb. Details TBD — great way to experience local culture before heading up the mountain.</div>
+  <table class="itin-table">
+    <thead><tr><th>Date</th><th>Activity</th><th>Overnight</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--muted);white-space:nowrap">Fri Jul 3</td><td>✈️ Depart JFK 4:15 PM (Swiss LX17)</td><td>Plane</td></tr>
+      <tr><td style="color:var(--muted)">Sat Jul 4</td><td>🛬 Arrive JRO 6:40 PM · ClimbKili driver waiting</td><td><span class="pdot" style="background:var(--kili-light)"></span>Summit Lodge, Arusha</td></tr>
+      <tr><td style="color:var(--muted)">Sun Jul 5</td><td>🤝 Do Good Day — community activity</td><td><span class="pdot" style="background:var(--kili-light)"></span>Summit Lodge, Arusha</td></tr>
+      <tr><td style="color:var(--muted)">Mon Jul 6</td><td>⛰️ Kili Day 1 · Londorossi Gate → Mti Mkubwa 8,694'</td><td><span class="pdot" style="background:var(--kili-light)"></span>Mti Mkubwa Camp</td></tr>
+      <tr><td style="color:var(--muted)">Tue Jul 7</td><td>⛰️ Kili Day 2 · → Shira Camp 11,500'</td><td><span class="pdot" style="background:var(--kili-light)"></span>Shira Camp</td></tr>
+      <tr><td style="color:var(--muted)">Wed Jul 8</td><td>⛰️ Kili Day 3 · → Moir Camp 13,650'</td><td><span class="pdot" style="background:var(--kili-light)"></span>Moir Camp</td></tr>
+      <tr><td style="color:var(--muted)">Thu Jul 9</td><td>⛰️ Kili Day 4 · → Barranco Camp 12,950' (via Lava Tower 15,190')</td><td><span class="pdot" style="background:var(--kili-light)"></span>Barranco Camp</td></tr>
+      <tr><td style="color:var(--muted)">Fri Jul 10</td><td>⛰️ Kili Day 5 · Barranco Wall → Karanga Camp 13,200'</td><td><span class="pdot" style="background:var(--kili-light)"></span>Karanga Camp</td></tr>
+      <tr><td style="color:var(--muted)">Sat Jul 11</td><td>⛰️ Kili Day 6 · → Kosovo Camp 16,000' (summit eve) ⭐</td><td><span class="pdot" style="background:var(--kili-light)"></span>Kosovo Camp</td></tr>
+      <tr style="background:#f0faf4"><td style="color:var(--muted)">Sun Jul 12</td><td>🏔️ SUMMIT NIGHT → Uhuru Peak 19,341' → Mweka Camp</td><td><span class="pdot" style="background:var(--kili-light)"></span>Mweka Camp</td></tr>
+      <tr><td style="color:var(--muted)">Mon Jul 13</td><td>🎉 Descent · Mweka Gate · Tip porters · Transfer to Arusha</td><td><span class="pdot" style="background:var(--safari-light)"></span>Villa Maua, Arusha</td></tr>
+      <tr><td style="color:var(--muted)">Tue Jul 14</td><td>🦒 Tarangire game drives (depart Arusha morning)</td><td><span class="pdot" style="background:var(--safari-light)"></span>The Retreat at Ngorongoro</td></tr>
+      <tr><td style="color:var(--muted)">Wed Jul 15</td><td>🦁 Central Serengeti game drives</td><td><span class="pdot" style="background:var(--safari-light)"></span>Lala Salama Serengeti Luxury Camp</td></tr>
+      <tr><td style="color:var(--muted)">Thu Jul 16</td><td>🦁 Central Serengeti game drives (Day 2)</td><td><span class="pdot" style="background:var(--safari-light)"></span>Lala Salama Serengeti Luxury Camp</td></tr>
+      <tr><td style="color:var(--muted)">Fri Jul 17</td><td>🦏 Serengeti / Ngorongoro drives · Lake Masek watering hole 🌊</td><td><span class="pdot" style="background:var(--safari-light)"></span>Lake Masek Tented Camp</td></tr>
+      <tr><td style="color:var(--muted)">Sat Jul 18</td><td>🌋 Ngorongoro Crater · Arusha · ✈️ TC105 8:30 PM → ZNZ</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Tembo House Hotel, Stone Town</td></tr>
+      <tr><td style="color:var(--muted)">Sun Jul 19</td><td>🏛️ Stone Town cultural exploration + spice tour</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Tembo House Hotel</td></tr>
+      <tr><td style="color:var(--muted)">Mon Jul 20</td><td>🚗 Stone Town → Matemwe beach (north-east coast)</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Infinity Beach Hotel & Spa</td></tr>
+      <tr style="background:#fff8f6"><td style="color:var(--muted)">Tue Jul 21</td><td>🤿 Snorkel / Scuba — Mnemba Atoll</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Infinity Beach Hotel & Spa</td></tr>
+      <tr><td style="color:var(--muted)">Wed Jul 22</td><td>🏖️ Free day — beach, spa, relax</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Infinity Beach Hotel & Spa</td></tr>
+      <tr><td style="color:var(--muted)">Thu Jul 23</td><td>🌴 Possibly drive to Paje · LAST DIVE DAY</td><td><span class="pdot" style="background:var(--zanzi-light)"></span>Infinity Beach Hotel & Spa</td></tr>
+      <tr><td style="color:var(--muted)">Fri Jul 24</td><td>✈️ Depart ZNZ 8:40 PM → Nairobi → JFK</td><td>Plane</td></tr>
+      <tr><td style="color:var(--muted)">Sat Jul 25</td><td>🏠 Land JFK 7:35 AM · Home!</td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="pc-kili" class="pc">
+  <p class="sh">Kilimanjaro — 8-Day Lemosho Route</p>
+  <div class="hl-box">ClimbKili · Tiffany Watson · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785b5451555a53515451165b5755">[email&#160;protected]</a> · +1 888 589 1884 · $2,895/person · Kosovo Advantage at 16,000' · Balance due ~May 4</div>
+  <div class="sub">Notes</div>
+  <textarea class="na" style="min-height:60px">Operator: ClimbKili · Route: 8-Day Lemosho · $2,895/person
+Deposit $350/person paid Dec 8, 2025 (non-refundable) · Balance ~$5,090 for 2 due ~May 4, 2026
+Required info submitted Dec 9, 2025 ✓ · Do Good Day Jul 5 (community activity, TBD from Todd)
+Reading list (Paul H): Touching the Void · Into Thin Air · 14 Peaks (Netflix)</textarea>
+
+  <div class="sub" style="margin-top:1rem">Day-by-Day</div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili-mid)">Jul 4<br>Day 0</div><div class="dm"><div class="ddate">Saturday July 4</div><div class="dact">Arrive JRO → Summit Lodge, Arusha</div><div class="dhotel">🏨 Summit Lodge Arusha</div></div></div><div class="dbody">Arrive JRO 6:40 PM. ClimbKili driver at arrivals. ~1hr transfer to Summit Lodge. Check in, meet guide, pick up rental gear. Breakfast included, rooftop dining, secure storage for non-mountain items. Leave all safari and Zanzibar gear here.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili-mid)">Jul 5<br>Rest</div><div class="dm"><div class="ddate">Sunday July 5</div><div class="dact">🤝 Do Good Day — Community Activity</div><div class="dhotel">🏨 Summit Lodge Arusha</div></div></div><div class="dbody">Todd has organized a community/volunteer activity in Arusha. Rest day + acclimatization + meaningful local experience. Details TBD from Todd.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili)">Jul 6<br>Day 1</div><div class="dm"><div class="ddate">Monday July 6</div><div class="dact">Londorossi Gate → Mti Mkubwa Camp</div><div class="dhotel">⛺ Mti Mkubwa Camp · 8,694' / 2,650m</div></div></div><div class="dbody"><strong>4 mi · 3–4 hrs</strong> · Gentle ascent through montane rainforest. Colobus monkeys overhead. Tents pre-set on arrival by porters.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili)">Jul 7<br>Day 2</div><div class="dm"><div class="ddate">Tuesday July 7</div><div class="dact">Mti Mkubwa → Shira Camp</div><div class="dhotel">⛺ Shira Camp · 11,500' / 3,505m</div></div></div><div class="dbody"><strong>5 mi · 5–7 hrs</strong> · Leave rainforest. Enter heath and moorland. First views of Kilimanjaro's snow cap. Drink water constantly — altitude effects begin.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili)">Jul 8<br>Day 3</div><div class="dm"><div class="ddate">Wednesday July 8</div><div class="dact">Shira Camp → Moir Camp</div><div class="dhotel">⛺ Moir Camp · 13,650' / 4,155m</div></div></div><div class="dbody"><strong>6 mi · 6–8 hrs</strong> · Trek east across Shira Plateau. Optional detour to Shira Cone volcano. Camp in sheltered valley on dormant lava flow.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:#0A2E1C">Jul 9<br>Day 4</div><div class="dm"><div class="ddate">Thursday July 9</div><div class="dact">Moir → Lava Tower (acclimatization) → Barranco</div><div class="dhotel">⛺ Barranco Camp · 12,950' · High point 15,190'</div></div></div><div class="dbody"><strong>7 mi · 5–7 hrs</strong> · Classic "climb high sleep low." Ascend to Lava Tower 15,190' for lunch, then descend through giant Senecio forest into Barranco Valley. The massive Barranco Wall dominates tomorrow's view.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili)">Jul 10<br>Day 5</div><div class="dm"><div class="ddate">Friday July 10</div><div class="dact">Barranco Wall scramble → Karanga Camp</div><div class="dhotel">⛺ Karanga Camp · 13,200' / 4,035m</div></div></div><div class="dbody"><strong>3 mi · 4–5 hrs</strong> · Famous hands-and-feet Barranco Wall scramble — rewarded with panoramic views at the top. Then South Circuit path to Karanga. Rest under stars — tomorrow gets serious.</div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:#081A0E">Jul 11<br>Day 6</div><div class="dm"><div class="ddate">Saturday July 11</div><div class="dact">Karanga → Kosovo Camp (summit eve)</div><div class="dhotel">⛺ Kosovo Camp · 16,000' ⭐ Kosovo Advantage</div></div></div><div class="dbody"><strong>2.6 mi · 4–5 hrs</strong> · Steady climb past Barafu to Kosovo Camp on an exposed ridge. Kibo and Mawenzi both visible. Early dinner ~5 PM · Sleep 7 PM · Wake midnight. Kosovo Advantage: ClimbKili's exclusive high camp puts you 700' above other groups — shorter summit push, higher success rate.</div><div class="dtags"><span class="dt dt-summit">Kosovo Advantage ⭐</span><span class="dt dt-summit">Summit Eve</span></div></div>
+  <div class="dc" style="border:2px solid var(--flight-light)"><div class="dh"><div class="dn" style="background:var(--flight);font-size:8px">Jul 11→12<br>SUMMIT</div><div class="dm"><div class="ddate">Saturday night / Sunday July 12</div><div class="dact">🏔️ SUMMIT NIGHT → Uhuru Peak 19,341' → Mweka Camp</div><div class="dhotel">⛺ Mweka Camp · 10,000' after descent</div></div></div><div class="dbody"><strong>13 mi total · Ascent 6–8 hrs · Descent 4–6 hrs</strong> · Midnight departure in the cold and dark (-10°F wind chill). Stella Point at sunrise — one of the most emotional moments imaginable. Uhuru Peak 1 hour beyond. Stand at 19,341' — the Roof of Africa. Descend all the way to Mweka Camp for celebration dinner.</div><div class="dtags"><span class="dt dt-summit">Uhuru Peak 19,341'</span><span class="dt dt-summit">Roof of Africa</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--kili-light);color:var(--kili)">Jul 13<br>Day 8</div><div class="dm"><div class="ddate">Monday July 13</div><div class="dact">Mweka Camp → Mweka Gate → Villa Maua, Arusha</div><div class="dhotel">🏨 Villa Maua · First night of luxury!</div></div></div><div class="dbody"><strong>6 mi · 3–4 hrs</strong> · Final rainforest descent. ClimbKili vehicle meets you at Mweka Gate. <strong>Tip porters and guides here</strong> (~$250–300/person in USD cash). Transfer to Villa Maua for hot showers, incredible food and the satisfaction of having summited Africa's highest peak.</div></div>
+</div>
+
+<div id="pc-safari" class="pc">
+  <p class="sh">Luxury Safari — Jul 13–17</p>
+  <div class="success-box">5 nights · 4 properties · $2,130/person · Deposit paid · Balance ~$2,982 due on arrival</div>
+  <div class="sub">Notes</div>
+  <textarea class="na" style="min-height:60px">Cost: $2,130/person · Deposit $1,278 for 2 paid Dec 8, 2025 · Balance ~$2,982 due on arrival at first lodge
+Confirm payment method (cash/card) with Todd before trip
+Jul 13 — Villa Maua, Arusha · Jul 14 — The Retreat at Ngorongoro · Jul 15–16 — Lala Salama Serengeti · Jul 17 — Lake Masek Tented Camp</textarea>
+  <div class="sub" style="margin-top:1rem">Day-by-Day</div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--safari)">Jul 13<br>S-1</div><div class="dm"><div class="ddate">Monday July 13 — Post-Summit</div><div class="dact">Mweka Gate → Villa Maua, Arusha</div><div class="dhotel">🏨 Villa Maua · "House of Flowers"</div></div></div><div class="dbody">Cape Dutch boutique hotel in historic Arusha. 9 garden rooms, saltwater pool, exceptional restaurant. TripAdvisor #13 of 91 in Arusha rated 5/5. Reviewers rave about the food — try the Swahili coconut chicken stew. Perfect soft landing after 8 days on the mountain.</div><div class="dtags"><span class="dt dt-pool">Saltwater pool</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--safari)">Jul 14<br>S-2</div><div class="dm"><div class="ddate">Tuesday July 14</div><div class="dact">Tarangire game drives → Ngorongoro</div><div class="dhotel">🏕️ The Retreat at Ngorongoro</div></div></div><div class="dbody">Morning departure from Arusha for Tarangire — famous for enormous elephant herds and ancient baobab trees. July is excellent for game viewing as wildlife concentrates at the Tarangire River. Then on to The Retreat at Ngorongoro for the night.</div><div class="dtags"><span class="dt dt-game">Tarangire elephants</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--safari)">Jul 15<br>S-3</div><div class="dm"><div class="ddate">Wednesday July 15</div><div class="dact">Central Serengeti game drives</div><div class="dhotel">🏕️ Lala Salama Serengeti Luxury Camp — Night 1</div></div></div><div class="dbody">"Sleep well" in Swahili. TripAdvisor: "five-star in every sense." Exceptional food, warm hospitality, perfect Central Serengeti location. Great Migration passes through in July. Lions, hyenas and buffalo heard from camp at night. lalasalamaserengeti.com</div><div class="dtags"><span class="dt dt-mig">Great Migration</span><span class="dt dt-game">Central Serengeti</span><span class="dt dt-pool">Pool</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--safari)">Jul 16<br>S-4</div><div class="dm"><div class="ddate">Thursday July 16</div><div class="dact">Central Serengeti game drives (Day 2)</div><div class="dhotel">🏕️ Lala Salama Serengeti Luxury Camp — Night 2</div></div></div><div class="dbody">Second full day in Central Serengeti. Early morning + late afternoon drives. July's peak predator-prey drama as cats follow the wildebeest herds. Midday at camp — pool, lunch, relax.</div><div class="dtags"><span class="dt dt-mig">Migration herds</span><span class="dt dt-game">Full day drives</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--safari)">Jul 17<br>S-5</div><div class="dm"><div class="ddate">Friday July 17</div><div class="dact">Serengeti / Ngorongoro drives</div><div class="dhotel">🏕️ Lake Masek Tented Camp 🌊 · On Lake Masek shores</div></div></div><div class="dbody">The watering hole camp Todd mentioned — on the banks of Lake Masek where hippos, elephants and buffalo come to drink constantly and can be watched from your tent veranda. En-suite tents on raised platforms with standalone bathtub and outdoor shower. Full board including house drinks. "A lion walked through camp one night." — TripAdvisor reviewer. Pool.</div><div class="dtags"><span class="dt dt-lake">Animals at lake ✓</span><span class="dt dt-game">Big 5</span><span class="dt dt-pool">Pool</span></div></div>
+</div>
+
+<div id="pc-zanzi" class="pc">
+  <p class="sh">Zanzibar — Jul 18–24</p>
+  <div class="success-box">6 nights · 2 hotels · Stone Town + Matemwe · Mnemba Atoll scuba in the plan ✓</div>
+  <div class="sub">Notes</div>
+  <textarea class="na" style="min-height:60px">Jul 18–19: Tembo House Hotel, Stone Town (arrive late ~9:30 PM from JRO)
+Jul 20–23: Infinity Beach Hotel & Spa, Matemwe (longest beach on Zanzibar, 15 min from Mnemba Atoll)
+Jul 21: Mnemba Atoll scuba dive — pre-book in June with One Ocean, Fun Divers or Spanish Dancer Divers
+Jul 19: Stone Town spice tour — book in advance · Dress modestly (shoulders + knees covered) in Stone Town
+LAST DIVE DAY: July 23 — return flight departs Jul 24 at 8:40 PM (no flying within 18–24hrs after diving)
+ZIC local Zanzibar insurance $44 USD — confirm if included in Todd's booking</textarea>
+  <div class="sub" style="margin-top:1rem">Day-by-Day</div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 18<br>Z-1</div><div class="dm"><div class="ddate">Saturday July 18 — Arrive late</div><div class="dact">Ngorongoro Crater → Arusha → ✈️ ZNZ</div><div class="dhotel">🏨 Tembo House Hotel · Stone Town waterfront</div></div></div><div class="dbody">Final Ngorongoro Crater drives in the morning, then transfer to Arusha for TC105 at 8:30 PM (arrive ZNZ 9:30 PM). Tembo House Hotel: historic property built as American Consulate in 1834, on the Stone Town seafront in the prestigious Shangani district. 3 min walk to Old Fort. Pool on site.</div><div class="dtags"><span class="dt dt-game">Ngorongoro Crater</span><span class="dt dt-cult">Historic 1834</span><span class="dt dt-pool">Pool</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 19<br>Z-2</div><div class="dm"><div class="ddate">Sunday July 19</div><div class="dact">Stone Town cultural exploration</div><div class="dhotel">🏨 Tembo House Hotel</div></div></div><div class="dbody">Full day in UNESCO World Heritage Stone Town. Omani-era alleyways, carved wooden doors, spice markets. Visit Old Fort, House of Wonders, former slave market, Forodhani Gardens. Book spice tour in advance. <strong>Dress modestly — shoulders and knees covered.</strong></div><div class="dtags"><span class="dt dt-cult">UNESCO Heritage</span><span class="dt dt-cult">Spice tour</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 20<br>Z-3</div><div class="dm"><div class="ddate">Monday July 20</div><div class="dact">Stone Town → Matemwe (north-east coast)</div><div class="dhotel">🏨 Infinity Beach Hotel & Spa · Matemwe</div></div></div><div class="dbody">Transfer to Matemwe — the longest and widest beach on Zanzibar. Infinity Beach has a spa, pool and direct beach access. 15 min by boat to Mnemba Atoll. July is peak season — warm, dry, 30m+ underwater visibility. Settle in and decompress after 17 intense days.</div><div class="dtags"><span class="dt dt-beach">Matemwe Beach</span><span class="dt dt-pool">Pool</span><span class="dt dt-spa">Spa</span></div></div>
+  <div class="dc" style="border:2px solid var(--zanzi-light)"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 21<br>Z-4</div><div class="dm"><div class="ddate">Tuesday July 21 — Highlight!</div><div class="dact">🤿 Snorkel / Scuba — Mnemba Atoll</div><div class="dhotel">🏨 Infinity Beach Hotel & Spa</div></div></div><div class="dbody">Mnemba Atoll is East Africa's most celebrated dive site — a protected marine reserve 15 min by boat. Both PADI certified → 2-tank dive day. Turtles, dolphins, reef sharks, moray eels, 500+ fish species, 30m+ visibility. <strong>Pre-book June with One Ocean Zanzibar, Fun Divers, or Spanish Dancer Divers.</strong></div><div class="dtags"><span class="dt dt-dive">Mnemba Atoll</span><span class="dt dt-dive">PADI Certified</span><span class="dt dt-dive">Turtles · dolphins</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 22<br>Z-5</div><div class="dm"><div class="ddate">Wednesday July 22</div><div class="dact">🏖️ Free day — beach, spa, relax</div><div class="dhotel">🏨 Infinity Beach Hotel & Spa</div></div></div><div class="dbody">No agenda. Sleep in, beach, spa, Indian Ocean. After 20 days of intense adventure, this is earned.</div><div class="dtags"><span class="dt dt-beach">Free day</span><span class="dt dt-spa">Spa</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:var(--zanzi)">Jul 23<br>Z-6</div><div class="dm"><div class="ddate">Thursday July 23 — Last full day</div><div class="dact">Possibly drive to Paje</div><div class="dhotel">🏨 Infinity Beach Hotel & Spa</div></div></div><div class="dbody">Optional excursion to Paje (kite surfing, laidback vibe) or stay at Matemwe. <strong>LAST POSSIBLE DIVE DAY</strong> — flight departs Jul 24 at 8:40 PM, no diving within 18–24 hrs.</div><div class="dtags"><span class="dt dt-beach">Last full day</span></div></div>
+  <div class="dc"><div class="dh"><div class="dn" style="background:#888">Jul 24<br>Home</div><div class="dm"><div class="ddate">Friday July 24</div><div class="dact">✈️ Depart ZNZ 8:40 PM → Nairobi → JFK</div><div class="dhotel">Kenya Airways KQ495 + KQ002 · Arrive JFK Jul 25 at 7:35 AM</div></div></div><div class="dbody">Final beach day until evening. KQ495 departs 8:40 PM. 1h 35m Nairobi layover (same terminal T1A). KQ002 departs 11:35 PM. Arrive JFK T4 7:35 AM July 25. <strong>Continue Malarone July 25–26.</strong></div></div>
+</div>
+
+<div id="pc-flights" class="pc">
+  <p class="sh">All Flights — Confirmed ✓</p>
+  <div class="success-box">3 flights · all confirmed · $5,481.16 total · Matt & Lynn seated together on every leg</div>
+  <div class="sub">Notes on flights</div>
+  <textarea class="na" style="min-height:50px">Swiss check-in opens July 2 at ~4:15 PM — use SWISS app · Booking ZGUWOY
+Nairobi layover is tight (1h 35m) but same terminal T1A — no re-security
+Last dive must be July 23 — no flying within 18–24hrs after diving</textarea>
+  <div class="sub" style="margin-top:1rem">Flight Details</div>
+  <div class="fc">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div class="fr">New York JFK → Kilimanjaro JRO</div><div class="fd">Friday July 3, 2026 — Outbound</div></div><span class="cb">Confirmed ✓ · $3,189.60</span></div>
+    <div class="fl"><div><div class="lt">16:15</div><div class="la">JFK · T1 / New York</div></div><div class="ll2"><div class="li2">LX17 · ~8h · SWISS A330-300</div><div class="lb"></div></div><div class="lr"><div class="lt">06:10<sup>+1</sup></div><div class="la">ZRH / Zurich</div></div></div>
+    <div class="sd">— 3h 25m Zurich layover —</div>
+    <div class="fl"><div><div class="lt">09:35</div><div class="la">ZRH / Zurich</div></div><div class="ll2"><div class="li2">LX8076 · ~9h · Edelweiss A350-900</div><div class="lb"></div></div><div class="lr"><div class="lt">18:40</div><div class="la">JRO / Kilimanjaro</div></div></div>
+    <div class="px"><div class="pchip">Matt · 24J (JFK-ZRH) · 21D (ZRH-JRO)</div><div class="pchip">Lynn · 24K (JFK-ZRH) · 21F (ZRH-JRO)</div></div>
+    <div class="fm"><div class="mi">Booking <strong>ZGUWOY</strong></div><div class="mi">Duration <strong>19h 25m</strong></div><div class="mi">Bags <strong>2×23kg each</strong></div></div>
+  </div>
+  <div class="fc">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div class="fr">Kilimanjaro JRO → Zanzibar ZNZ</div><div class="fd">Saturday July 18, 2026</div></div><span class="cb">Confirmed ✓ · $432.00</span></div>
+    <div class="fl"><div><div class="lt">20:30</div><div class="la">JRO / Kilimanjaro</div></div><div class="ll2"><div class="li2">TC105 · 1h · Air Tanzania</div><div class="lb"></div></div><div class="lr"><div class="lt">21:30</div><div class="la">ZNZ / Zanzibar</div></div></div>
+    <div class="px"><div class="pchip">Matt Parnell · Seat 8C · Tkt 1972404088517</div><div class="pchip">Lynn Schuster · Seat 8D · Tkt 1972404088518</div></div>
+    <div class="fm"><div class="mi">PNR <strong>1BETT2</strong></div><div class="mi">Cost <strong>$432</strong> ($216/person)</div></div>
+  </div>
+  <div class="fc">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px"><div><div class="fr">Zanzibar ZNZ → New York JFK</div><div class="fd">Friday July 24, 2026 — Return</div></div><span class="cb">Confirmed ✓ · $1,859.56</span></div>
+    <div class="fl"><div><div class="lt">20:40</div><div class="la">ZNZ · T3 / Zanzibar</div></div><div class="ll2"><div class="li2">KQ495 · 1h 20m · E190</div><div class="lb"></div></div><div class="lr"><div class="lt">22:00</div><div class="la">NBO · T1A / Nairobi</div></div></div>
+    <div class="sd">— 1h 35m Nairobi layover (same terminal T1A — tight!) —</div>
+    <div class="fl"><div><div class="lt">23:35</div><div class="la">NBO · T1A / Nairobi</div></div><div class="ll2"><div class="li2">KQ002 · 15h · Boeing 787-8</div><div class="lb"></div></div><div class="lr"><div class="lt">07:35<sup>+1</sup></div><div class="la">JFK · T4 / New York</div></div></div>
+    <div class="fm"><div class="mi">Res <strong>Y8XF7X</strong></div><div class="mi">Fare <strong>Economy Flex</strong></div><div class="mi">Bags <strong>2×23kg each</strong></div><div class="mi">AmEx <strong>***1005</strong></div></div>
+  </div>
+</div>
+
+</div><!-- end main -->
+</div><!-- end panel-itinerary -->
+
+<!-- ═══ HOTELS PANEL ═══ -->
+<div id="panel-hotels" class="panel">
+<div class="main">
+  <p class="sh">All 10 Properties — Full Trip</p>
+  <div class="sub" style="color:var(--kili)">⛰️ Kilimanjaro — 2 nights</div>
+  <div class="hc"><div class="hn">Summit Lodge Arusha</div><div class="hl2">Arusha · Jul 4–5 · 2 nights (pre-climb base)</div><div class="hdesc">ClimbKili's base hotel. Breakfast included, Wi-Fi, rooftop dining with Kilimanjaro views. Secure storage for non-mountain items. On-site gear rental facility — guide briefing and gear pickup happens here on Day 0.</div><div class="dtags"><span class="dt dt-pool">Pool</span><span class="dt dt-kili">ClimbKili base</span></div></div>
+
+  <div class="sub" style="color:var(--safari)">🦁 Safari — 5 nights · 4 properties</div>
+  <div class="hc"><div class="hn">Villa Maua — "House of Flowers"</div><div class="hl2">Arusha city center · Jul 13 · 1 night · Post-summit celebration · villamaua.co.tz</div><div class="hdesc">Elegant Cape Dutch boutique hotel in historic Arusha. 9 garden rooms with private verandas. Saltwater pool, exceptional restaurant. TripAdvisor #13 of 91 in Arusha, 5/5 rating. Reviewers rave about the Swahili food. The perfect soft landing after 8 days on the mountain.</div><div class="dtags"><span class="dt dt-pool">Saltwater pool</span></div></div>
+  <div class="hc"><div class="hn">The Retreat at Ngorongoro</div><div class="hl2">Ngorongoro area · Jul 14 · 1 night</div><div class="hdesc">Luxury retreat near Ngorongoro Conservation Area. After Tarangire game drives. Details TBD from Todd — more to come.</div><div class="dtags"><span class="dt dt-game">Ngorongoro region</span></div></div>
+  <div class="hc"><div class="hn">Lala Salama Serengeti Luxury Camp ⭐</div><div class="hl2">Central Serengeti National Park · Jul 15–16 · 2 nights · lalasalamaserengeti.com</div><div class="hdesc">TripAdvisor reviews call it "five-star in every sense" with exceptional food, warm staff, and a prime position in the Central Serengeti. Great Migration passes through in July. Lions, buffalo and hyenas can be heard from camp at night. Personalized game drives, pool.</div><div class="dtags"><span class="dt dt-mig">Great Migration July</span><span class="dt dt-pool">Pool</span><span class="dt dt-game">Central Serengeti</span></div></div>
+  <div class="hc"><div class="hn">Lake Masek Tented Camp 🌊</div><div class="hl2">Ndutu · Between Serengeti & Ngorongoro Conservation Area · Jul 17 · 1 night</div><div class="hdesc">The watering hole camp Todd described — directly on the shores of Lake Masek where hippos, elephants, buffalo and lions visit constantly and can be watched from your private veranda. En-suite tents on raised wooden platforms with standalone bathtub AND outdoor shower. Solar powered. Full board including house drinks. Pool. "A lion walked through camp one night." — TripAdvisor.</div><div class="dtags"><span class="dt dt-lake">Animals at lake ✓</span><span class="dt dt-pool">Pool</span><span class="dt dt-game">Big 5</span></div></div>
+
+  <div class="sub" style="color:var(--zanzi)">🏖️ Zanzibar — 6 nights · 2 hotels</div>
+  <div class="hc"><div class="hn">Tembo House Hotel</div><div class="hl2">Shangani district, Stone Town seafront · Jul 18–19 · 2 nights (arrive late Jul 18)</div><div class="hdesc">Historic property originally built as the American Consulate in 1834. Rooms decorated with Swahili and oriental antiques. Pool, restaurant. 3-minute walk from Old Fort and House of Wonders. Forodhani Gardens night market nearby. Mahatma Gandhi stayed here in 1930.</div><div class="dtags"><span class="dt dt-cult">Historic 1834</span><span class="dt dt-pool">Pool</span><span class="dt dt-cult">Stone Town</span></div></div>
+  <div class="hc"><div class="hn">Infinity Beach Hotel & Spa</div><div class="hl2">Matemwe, north-east Zanzibar · Jul 20–23 · 4 nights</div><div class="hdesc">On the longest and widest beach on Zanzibar Island. Boutique hotel with spa, pool, direct beach access. Matemwe is the closest town to Mnemba Atoll (15 min by boat) — perfect base for the scuba dive. July is peak season with 30m+ underwater visibility.</div><div class="dtags"><span class="dt dt-beach">Matemwe Beach</span><span class="dt dt-pool">Pool</span><span class="dt dt-spa">Spa</span><span class="dt dt-dive">15 min to Mnemba</span></div></div>
+</div>
+</div>
+
+<!-- ═══ TO-DO PANEL ═══ -->
+<div id="panel-todo" class="panel">
+<div class="main">
+  <p class="sh">Matt & Lynn — Pre-Trip To-Do</p>
+  <div class="stats-row">
+    <div class="sc"><div class="sc-num" id="td-done">0</div><div class="sc-label">Completed</div></div>
+    <div class="sc"><div class="sc-num" id="td-left">0</div><div class="sc-label">Remaining</div></div>
+    <div class="sc"><div class="sc-num" id="td-days">—</div><div class="sc-label">Days to Jul 3</div></div>
+  </div>
+  <div class="prog-wrap"><div class="prog-label"><span>Progress</span><span id="td-pct">0%</span></div><div class="prog-track"><div class="prog-fill" id="td-bar" style="width:0%"></div></div></div>
+  <div class="pf">
+    <button class="fb active" onclick="ftd('all',this)">All</button>
+    <button class="fb" onclick="ftd('now',this)">Now</button>
+    <button class="fb" onclick="ftd('may',this)">May</button>
+    <button class="fb" onclick="ftd('june',this)">June</button>
+    <button class="fb" onclick="ftd('pre',this)">Pre-departure</button>
+    <button class="fb" onclick="ftd('trip',this)">On the trip</button>
+  </div>
+
+  <div class="sub" data-tg="now" style="color:var(--red)">⚡ Now — April 2026</div>
+  <ul class="checklist" data-tg="now">
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Check passport expiry — both Matt & Lynn<span class="tt tt-u">urgent</span></span><span class="tn">Must be valid past Jan 25, 2027</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Get travel insurance — altitude, evacuation, cancellation<span class="tt tt-u">urgent</span></span><span class="tn">~$8,000+ prepaid costs to protect · must cover high-altitude trekking</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Pick up prescriptions: Malarone, Typhoid pills, Zithromax<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Assess hiking boots — both Matt & Lynn<span class="tt tt-u">urgent</span></span><span class="tn">Try with thick wool socks on an incline. If buying new: start immediately — 6–8 weeks to break in</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Buy down puffy jackets — Matt & Lynn<span class="tt tt-u">priority</span></span><span class="tn">Critical for summit night · also useful for training hikes right now</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Download SWISS app · save booking ZGUWOY<span class="tt tt-a">admin</span></span><span class="tn">Needed for check-in July 2 at ~4:15 PM</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Begin Kilimanjaro fitness training<span class="tt tt-a">fitness</span></span><span class="tn">Cardio + elevation hikes + weighted pack · 3 months out</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Ask Todd about "Do Good Day" details — Jul 5<span class="tt tt-a">admin</span></span><span class="tn">What activity? Any clothing or prep needed?</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Confirm tetanus booster current — both<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Ask Todd for Zanzibar hotel costs — Tembo House + Infinity Beach<span class="tt tt-m">$$$</span></span></div></li>
+  </ul>
+
+  <div class="sub" data-tg="may" style="color:var(--safari);margin-top:1rem">May 2026</div>
+  <ul class="checklist" data-tg="may">
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Pay Kilimanjaro balance ~$5,090 to ClimbKili<span class="tt tt-m">$$$</span><span class="tt tt-u">Due ~May 4</span></span><span class="tn">Confirm exact amount with Tiffany Watson at ClimbKili</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Confirm safari balance payment method with Todd<span class="tt tt-m">$$$</span></span><span class="tn">~$2,982 due on arrival — cash or card?</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>REI Anniversary Sale — buy remaining gear<span class="tt tt-a">gear</span></span><span class="tn">Lynn's shell jacket + pants, gaiters ×2, headlamps ×2, Nalgenes, blister kits · typically 20–30% off</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Buy GoPro Hero 13 Black + Enduro batteries<span class="tt tt-a">gear</span></span><span class="tn">~$450–470 · chest mount + head mount already owned</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Break in hiking boots — serious back-to-back trail time<span class="tt tt-u">urgent</span></span></div></li>
+  </ul>
+
+  <div class="sub" data-tg="june" style="color:var(--kili);margin-top:1rem">June 2026</div>
+  <ul class="checklist" data-tg="june">
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Apply Tanzania e-Visa — Matt<span class="tt tt-u">urgent</span></span><span class="tn">By mid-June · visa.immigration.go.tz · $100 · Multiple Entry</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Apply Tanzania e-Visa — Lynn<span class="tt tt-u">urgent</span></span><span class="tn">Same portal · $100 · 1–10 days processing</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Start typhoid course — Matt (Jun 25)<span class="tt tt-h">health</span></span><span class="tn">Pill 1 of 4 · every other day · complete by Jul 1</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Start typhoid course — Lynn (Jun 25)<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Pre-book Mnemba Atoll scuba dive — Jul 21<span class="tt tt-u">urgent</span></span><span class="tn">Peak season · book One Ocean Zanzibar, Fun Divers, or Spanish Dancer Divers</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Book Stone Town spice tour — Jul 19<span class="tt tt-a">admin</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Prepare USD cash: porter tips (~$600) + safari balance + spending<span class="tt tt-m">$$$</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Notify credit cards — Tanzania travel Jul 3–25<span class="tt tt-a">admin</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Download offline maps (Maps.me or Google offline)<span class="tt tt-a">admin</span></span><span class="tn">No cell service on mountain or in parks</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Full gear shakedown — weigh duffel bags<span class="tt tt-a">gear</span></span><span class="tn">Porter limit 15kg / 33 lbs — strictly enforced · weighed at hotel and at each camp</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Confirm electrolyte packet supply with Todd<span class="tt tt-h">health</span></span></div></li>
+  </ul>
+
+  <div class="sub" data-tg="pre" style="color:var(--flight);margin-top:1rem">Final Week — July 1–3</div>
+  <ul class="checklist" data-tg="pre">
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Start Malarone — Matt & Lynn (July 2)<span class="tt tt-h">health</span></span><span class="tn">1 day before departure · daily with food · continue Jul 25–26 after return</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Online check-in Swiss LX17 (July 2 at ~4:15 PM)<span class="tt tt-a">admin</span></span><span class="tn">Opens 23hrs before departure · SWISS app</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Print all documents — both e-visas, 3 flight confirmations, ClimbKili itinerary<span class="tt tt-a">admin</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Pack all medications in carry-on only — never check<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Charge all devices + power banks fully<span class="tt tt-a">gear</span></span><span class="tn">No charging on mountain for 8 days</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Confirm ClimbKili driver pickup — JRO Jul 4 at 6:40 PM<span class="tt tt-a">admin</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Leave full itinerary + emergency contacts with someone at home<span class="tt tt-a">admin</span></span></div></li>
+  </ul>
+
+  <div class="sub" data-tg="trip" style="color:var(--flight-light);margin-top:1rem">On the Trip — July 3–25</div>
+  <ul class="checklist" data-tg="trip">
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Take Malarone daily with food — Jul 2 through Jul 26<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Drink 3–4 liters water daily on Kilimanjaro<span class="tt tt-h">health</span></span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Tip porters & guides at Mweka Gate — Jul 13<span class="tt tt-m">$$$</span></span><span class="tn">~$250–300/person · USD cash ready</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Pay safari balance on arrival at Villa Maua — Jul 13<span class="tt tt-m">$$$</span></span><span class="tn">~$2,982 for 2 · confirm payment method with Todd beforehand</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Dress modestly in Stone Town — Jul 19<span class="tt tt-a">admin</span></span><span class="tn">Shoulders and knees covered · conservative Muslim culture</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Last dive by Jul 23 — no diving on return flight day<span class="tt tt-h">health</span></span><span class="tn">Flight departs Jul 24 at 8:40 PM · no flying within 18–24hrs of diving</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Check in Kenya Airways KQ495 — Jul 24<span class="tt tt-a">admin</span></span><span class="tn">24hrs before · tight 1h 35m Nairobi layover same terminal T1A</span></div></li>
+    <li><input type="checkbox" onchange="tchk(this)"><div><span>Continue Malarone Jul 25–26 after returning home<span class="tt tt-h">health</span></span></div></li>
+  </ul>
+</div>
+</div>
+
+<!-- ═══ GEAR PANEL ═══ -->
+<div id="panel-gear" class="panel">
+<div class="main">
+  <p class="sh">Kilimanjaro Gear Checklist</p>
+  <div class="success-box">REI purchases confirmed: Order #9678 ($1,615.04) + Order #9677 ($187.37) = $1,802.41 paid ✓</div>
+  <div class="info-box">Porter duffel limit: <strong>15kg / 33 lbs</strong> — strictly enforced at hotel and at each camp. See the Weight tab for duffel estimates.</div>
+  <div class="stats-row">
+    <div class="sc"><div class="sc-num" id="g-got">0</div><div class="sc-label">Have it</div></div>
+    <div class="sc"><div class="sc-num" id="g-need">0</div><div class="sc-label">Still need</div></div>
+    <div class="sc"><div class="sc-num" id="g-done">0</div><div class="sc-label">Checked off</div></div>
+  </div>
+  <div class="prog-wrap"><div class="prog-label"><span>Gear readiness</span><span id="g-pct">0%</span></div><div class="prog-track"><div class="prog-fill" id="g-bar" style="width:0%"></div></div></div>
+  <div class="pf">
+    <button class="fb active" onclick="fg('all',this)">All</button>
+    <button class="fb" onclick="fg('got',this)">Already have</button>
+    <button class="fb" onclick="fg('need',this)">Still needed</button>
+    <button class="fb" onclick="fg('matt',this)">Matt</button>
+    <button class="fb" onclick="fg('lynn',this)">Lynn</button>
+    <button class="fb" onclick="fg('duffel',this)">Duffel bag</button>
+    <button class="fb" onclick="fg('daypack',this)">Daypack</button>
+  </div>
+
+  <div class="sub">🛌 Sleeping & Camp</div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Bishop Pass 0° Sleeping Bag — Men's (Matt)</div><div class="gnote">REI #9678 · 0°F rated · critical for summit night · compress into stuff sack</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~3.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Bishop Pass 0° Sleeping Bag — Women's (Lynn)</div><div class="gnote">REI #9678 · 0°F rated · critical for summit night</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~3.0 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Reactor Thermolite Sleeping Bag Liner (Matt)</div><div class="gnote">REI #9678 · adds warmth + keeps bag clean · essential for 8 nights</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~0.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Reactor Thermolite Sleeping Bag Liner (Lynn)</div><div class="gnote">REI #9678 · adds warmth + keeps bag clean</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~0.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">NeoLoft Sleeping Pad (Matt)</div><div class="gnote">REI #9678 · insulated pad — essential for cold ground at altitude</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">NeoLoft Sleeping Pad (Lynn)</div><div class="gnote">REI #9678 · insulated pad</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Ultra Pump (pad inflation)</div><div class="gnote">REI #9678 · for inflating both NeoLoft pads</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span></div></div><div class="gwt">~0.3 lbs</div></div>
+
+  <div class="sub">🎒 Bags</div>
+  <div class="gear-item got" data-g="got matt duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Big Haul 90 Duffel — Matt (porter bag)</div><div class="gnote">REI #9678 · 90L soft-sided · porters carry on their heads · must stay under 15kg / 33 lbs total</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~2.5 lbs empty</div></div>
+  <div class="gear-item got" data-g="got lynn duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Big Haul 90 Duffel — Lynn (porter bag)</div><div class="gnote">REI #9678 · 90L soft-sided</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~2.5 lbs empty</div></div>
+  <div class="gear-item got" data-g="got matt daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Daypack 25–35L + rain cover — Matt</div><div class="gnote">Already have · you carry this all day · target under 10–12 lbs</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item got" data-g="got lynn daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Daypack 25–35L + rain cover — Lynn</div><div class="gnote">Already have · target under 10–12 lbs</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~1.5 lbs</div></div>
+
+  <div class="sub">👕 Base Layers</div>
+  <div class="gear-item got" data-g="got matt duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Base layer tops — Matt</div><div class="gnote">Already have · synthetic running shirts (short + long) + Smartwool ¾-zip tops · 2–3 needed</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item got" data-g="got lynn duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Base layer tops — Lynn</div><div class="gnote">Running shirts + REI Merino ¾-zip (Order #9677) + existing Smartwool</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9677</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item got" data-g="got matt duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Base layer bottoms — Matt</div><div class="gnote">Running tights of various weights · 2 pairs recommended</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~1.0 lbs</div></div>
+  <div class="gear-item got" data-g="got lynn duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Base layer bottoms — Lynn</div><div class="gnote">Running tights + REI Merino base bottoms (Order #9677)</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9677</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~1.0 lbs</div></div>
+
+  <div class="sub">🧥 Insulation & Shells</div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Fleece / Smartwool mid-layer — Matt & Lynn</div><div class="gnote">Already have · multiple options · worn over base layer</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item" data-g="need matt duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Down puffy jacket — Matt</div><div class="gnote">🛒 Buy now · 600–800 fill power · worn under shell on summit night · compress into stuff sack</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-matt">Matt</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item" data-g="need lynn duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Down puffy jacket — Lynn</div><div class="gnote">🛒 Buy now · women's fit · same purpose as Matt's</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~1.2 lbs</div></div>
+  <div class="gear-item got" data-g="got matt duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Waterproof shell jacket + pants — Matt</div><div class="gnote">Already has full set · outer layer · waterproof + breathable</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~1.7 lbs</div></div>
+  <div class="gear-item" data-g="need lynn duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Waterproof shell jacket — Lynn</div><div class="gnote">🛒 Buy · Gore-Tex or equivalent · fully waterproof + breathable outer layer</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~1.0 lbs</div></div>
+  <div class="gear-item" data-g="need lynn duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Waterproof shell pants — Lynn</div><div class="gnote">🛒 Buy · lightweight · fits over hiking pants</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~0.7 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Hiking pants — Matt & Lynn</div><div class="gnote">Already have · 2–3 pairs each · quick-dry · no denim or cotton</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item" data-g="need both duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Gaiters (mid-height) — Matt & Lynn</div><div class="gnote">🛒 Buy · both need them · keeps scree, ash and snow out of boots on descent</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.5 lbs</div></div>
+
+  <div class="sub">🧤 Head, Hands & Feet</div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Warm hat / beanie + balaclava — Matt & Lynn</div><div class="gnote">Already have · for camp evenings + summit night face protection (-10°F wind chill)</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.6 lbs</div></div>
+  <div class="gear-item got" data-g="got both daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Sun hat / cap — Matt & Lynn</div><div class="gnote">Already have · for lower altitude sunny sections</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Light liner gloves — Matt & Lynn</div><div class="gnote">Already have as runners · for general trekking days</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item got" data-g="got matt duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Summit mitts / gloves — Matt</div><div class="gnote">Already has adequate insulated waterproof gloves for summit</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~0.5 lbs</div></div>
+  <div class="gear-item" data-g="need lynn duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Summit mitts / gloves — Lynn</div><div class="gnote">🛒 Buy · insulated + waterproof · -10°F wind chill on summit night · mitts warmer than gloves</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~0.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both duffel"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Wool / synthetic hiking socks — Matt & Lynn</div><div class="gnote">Already have as runners · 4–6 pairs each · merino preferred · no cotton</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.0 lbs</div></div>
+
+  <div class="sub">🥾 Footwear</div>
+  <div class="gear-item pending-g" data-g="need matt duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Hiking boots — Matt</div><div class="gnote">⏳ Assessing existing boots · if buying new: start immediately — 6–8 weeks to break in</div><div class="gbadges"><span class="badge b-pend">Pending assessment</span><span class="badge b-matt">Matt</span><span class="badge b-crit">Time sensitive</span></div></div><div class="gwt">~3.0 lbs</div></div>
+  <div class="gear-item pending-g" data-g="need lynn duffel"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Hiking boots — Lynn</div><div class="gnote">⏳ Assessing existing boots · if buying new: same urgency as Matt</div><div class="gbadges"><span class="badge b-pend">Pending assessment</span><span class="badge b-lynn">Lynn</span><span class="badge b-crit">Time sensitive</span></div></div><div class="gwt">~2.5 lbs</div></div>
+  <div class="gear-item got" data-g="got both"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Camp shoes (slide-on recovery) — Matt & Lynn</div><div class="gnote">Already have · slide-on recovery shoes perfect for camp evenings</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.0 lbs</div></div>
+
+  <div class="sub">🔦 Equipment & Tools</div>
+  <div class="gear-item got" data-g="got both daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Trekking poles — Matt & Lynn</div><div class="gnote">Already have · essential on Barranco Wall and the long descent</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Headlamp — new high-powered (Matt)</div><div class="gnote">🛒 Buy · 400+ lumens · CRITICAL for midnight summit start · existing lamps kept as backups</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-matt">Matt</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Headlamp — new high-powered (Lynn)</div><div class="gnote">🛒 Buy · same model as Matt for battery consistency · existing ones as backup</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item got" data-g="got both daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Backup headlamps (existing older ones)</div><div class="gnote">Using existing headlamps as backups · no new purchase needed</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Hydration bladder insulated hose sleeve — Matt & Lynn</div><div class="gnote">🛒 Buy · prevents hose freezing above 14,000' · fits existing CamelBak/Osprey bladders</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Nalgene wide-mouth insulated bottle — Matt & Lynn</div><div class="gnote">🛒 Buy · 32oz · wide mouth for electrolyte packets · backup when hose freezes at altitude</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.8 lbs</div></div>
+  <div class="gear-item got" data-g="got both daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Power banks (multiple) — Matt & Lynn</div><div class="gnote">Already have several · no charging on mountain for 8 days · sleep with them inside your sleeping bag at night</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~1.5 lbs</div></div>
+  <div class="gear-item pending-g" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Anker 21W foldable solar panel charger</div><div class="gnote">⏳ Pending decision · ~$60 · 13oz · lighter + cheaper than BioLite · clips to daypack while trekking</div><div class="gbadges"><span class="badge b-pend">Pending</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.8 lbs</div></div>
+
+  <div class="sub">📷 Camera & Tech</div>
+  <div class="gear-item" data-g="need matt daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">GoPro Hero 13 Black</div><div class="gnote">🛒 Buy · waterproof · rugged · existing older GoPro kept as backup camera</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-matt">Matt</span><span class="badge b-gopro">GoPro</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item" data-g="need matt daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">GoPro Enduro batteries (4–6 total)</div><div class="gnote">🛒 Buy · cold-weather optimized · keep spares warm in inner pocket · get 2–3 packs</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-matt">Matt</span><span class="badge b-gopro">GoPro</span></div></div><div class="gwt">~0.3 lbs</div></div>
+  <div class="gear-item got" data-g="got matt daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">GoPro chest mount + head mount</div><div class="gnote">Already have both · chest mount for trekking · head mount for summit night</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~0.4 lbs</div></div>
+  <div class="gear-item got" data-g="got matt daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Older GoPro (backup camera)</div><div class="gnote">Already have · keep charged as summit night backup</div><div class="gbadges"><span class="badge b-got">✓ Have it (backup)</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~0.3 lbs</div></div>
+
+  <div class="sub">💊 Health & Personal Care</div>
+  <div class="gear-item got" data-g="got both"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Down Wash (post-trip sleeping bag care)</div><div class="gnote">REI #9678 · for washing sleeping bags after the trip</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-rei">REI #9678</span></div></div><div class="gwt">~0.5 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Malarone + Typhoid pills (in carry-on)</div><div class="gnote">Prescribed · pick up from pharmacy · ALWAYS carry-on, never check</div><div class="gbadges"><span class="badge b-need">Pick up Rx</span><span class="badge b-both">Both</span><span class="badge b-crit">Critical</span></div></div><div class="gwt">~0.1 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Blister kit — Matt</div><div class="gnote">🛒 Buy · moleskin, Compeed blister pads, Leukotape · treat hot spots on Day 1 before they develop</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-matt">Matt</span></div></div><div class="gwt">~0.2 lbs</div></div>
+  <div class="gear-item" data-g="need both daypack"><input type="checkbox" onchange="gchk(this)"><div class="gbody"><div class="gname">Blister kit — Lynn</div><div class="gnote">🛒 Buy · each person carries their own</div><div class="gbadges"><span class="badge b-need">Still needed</span><span class="badge b-lynn">Lynn</span></div></div><div class="gwt">~0.2 lbs</div></div>
+  <div class="gear-item got" data-g="got both daypack"><input type="checkbox" onchange="gchk(this)" checked><div class="gbody"><div class="gname">Sunglasses (UV protection) — Matt & Lynn</div><div class="gnote">Already have · 100% UV · wraparound preferred · essential above 14,000'</div><div class="gbadges"><span class="badge b-got">✓ Have it</span><span class="badge b-both">Both</span></div></div><div class="gwt">~0.2 lbs</div></div>
+</div>
+</div>
+
+<!-- ═══ WEIGHT PANEL ═══ -->
+<div id="panel-weight" class="panel">
+<div class="main">
+  <p class="sh">Duffel Bag Weight Tracker</p>
+  <div class="alert-box"><strong>Porter limit: 15kg / 33 lbs</strong> — strictly enforced. Bags weighed at the hotel before departure and at every camp by park rangers. Over the limit = hire extra porter at your expense.</div>
+  <div class="info-box"><strong>Daypack target: 10–12 lbs</strong> — you carry this all day. Heavy due to water (~4.5 lbs for 2–3L) which is unavoidable. Keep non-essentials in the porter duffel.</div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:12px;">
+    <div class="sh" style="font-size:14px;margin-bottom:10px;">Matt's Porter Duffel</div>
+    <table class="wtable">
+      <thead><tr><th>Item</th><th style="text-align:right">Est. Weight</th></tr></thead>
+      <tbody>
+        <tr><td>Big Haul 90 Duffel (empty)</td><td style="text-align:right">2.5 lbs</td></tr>
+        <tr><td>Bishop Pass 0° Sleeping Bag</td><td style="text-align:right">3.5 lbs</td></tr>
+        <tr><td>Reactor Thermolite Liner</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr><td>NeoLoft Sleeping Pad</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Ultra Pump</td><td style="text-align:right">0.3 lbs</td></tr>
+        <tr><td>Base layers (tops + bottoms, 2 sets)</td><td style="text-align:right">2.5 lbs</td></tr>
+        <tr><td>Fleece / Smartwool mid-layers</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Down puffy jacket (to buy)</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Waterproof shell jacket</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Waterproof shell pants</td><td style="text-align:right">0.7 lbs</td></tr>
+        <tr><td>Hiking pants (2 pairs)</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Hats, balaclava, summit gloves, liner gloves</td><td style="text-align:right">1.1 lbs</td></tr>
+        <tr><td>Hiking socks (5 pairs)</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Gaiters (to buy)</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr><td>Camp shoes</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Toiletries + personal items</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Snacks for duffel</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Dry bags + packing cubes</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr class="total-r"><td><strong>Estimated total</strong></td><td style="text-align:right"><strong class="w-warn">25.1 lbs / 11.4kg</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="wbar-wrap" style="margin-top:10px">
+      <div class="wbar-header"><span class="wbar-label">vs. 33 lb limit</span><span class="w-ok">25.1 lbs — 7.9 lbs of headroom ✓</span></div>
+      <div class="wbar-track"><div class="wbar-fill" style="width:76%;background:var(--kili-light)"></div></div>
+    </div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:12px;">
+    <div class="sh" style="font-size:14px;margin-bottom:10px;">Lynn's Porter Duffel</div>
+    <table class="wtable">
+      <thead><tr><th>Item</th><th style="text-align:right">Est. Weight</th></tr></thead>
+      <tbody>
+        <tr><td>Big Haul 90 Duffel (empty)</td><td style="text-align:right">2.5 lbs</td></tr>
+        <tr><td>Bishop Pass 0° Sleeping Bag (Women's)</td><td style="text-align:right">3.0 lbs</td></tr>
+        <tr><td>Reactor Thermolite Liner</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr><td>NeoLoft Sleeping Pad</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Base layers (REI merino + running gear)</td><td style="text-align:right">2.5 lbs</td></tr>
+        <tr><td>Fleece / Smartwool mid-layers</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Down puffy jacket (to buy)</td><td style="text-align:right">1.2 lbs</td></tr>
+        <tr><td>Waterproof shell jacket (to buy)</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Waterproof shell pants (to buy)</td><td style="text-align:right">0.7 lbs</td></tr>
+        <tr><td>Hiking pants (2 pairs)</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Hats, balaclava, summit mitts, liner gloves</td><td style="text-align:right">1.3 lbs</td></tr>
+        <tr><td>Hiking socks (5 pairs)</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Gaiters (to buy)</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr><td>Camp shoes</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Toiletries + personal items</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Snacks for duffel</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Dry bags + packing cubes</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr class="total-r"><td><strong>Estimated total</strong></td><td style="text-align:right"><strong class="w-ok">24.2 lbs / 11.0kg</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="wbar-wrap" style="margin-top:10px">
+      <div class="wbar-header"><span class="wbar-label">vs. 33 lb limit</span><span class="w-ok">24.2 lbs — 8.8 lbs of headroom ✓</span></div>
+      <div class="wbar-track"><div class="wbar-fill" style="width:73%;background:var(--kili-light)"></div></div>
+    </div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:12px;">
+    <div class="sh" style="font-size:14px;margin-bottom:10px;">Daypack — Matt (carried each day)</div>
+    <table class="wtable">
+      <thead><tr><th>Item</th><th style="text-align:right">Est. Weight</th></tr></thead>
+      <tbody>
+        <tr><td>Daypack (empty)</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Water (2–3L)</td><td style="text-align:right">4.5 lbs</td></tr>
+        <tr><td>Nalgene bottle (full)</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Trekking poles</td><td style="text-align:right">1.5 lbs</td></tr>
+        <tr><td>Headlamp + backup</td><td style="text-align:right">0.6 lbs</td></tr>
+        <tr><td>GoPro + batteries + mounts</td><td style="text-align:right">0.7 lbs</td></tr>
+        <tr><td>Power bank</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Snacks (daily)</td><td style="text-align:right">1.0 lbs</td></tr>
+        <tr><td>Sunscreen, lip balm, sunglasses</td><td style="text-align:right">0.5 lbs</td></tr>
+        <tr><td>Rain layer (jacket + pants)</td><td style="text-align:right">1.7 lbs</td></tr>
+        <tr><td>Medications + blister kit</td><td style="text-align:right">0.3 lbs</td></tr>
+        <tr><td>Solar panel (if purchased)</td><td style="text-align:right">0.8 lbs</td></tr>
+        <tr class="total-r"><td><strong>Estimated total (with water)</strong></td><td style="text-align:right"><strong class="w-warn">15.7 lbs</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="wbar-wrap" style="margin-top:10px">
+      <div class="wbar-header"><span class="wbar-label">vs. 12 lb target</span><span class="w-warn">15.7 lbs — over target (mostly water weight)</span></div>
+      <div class="wbar-track"><div class="wbar-fill" style="width:100%;background:var(--amber-dark)"></div></div>
+    </div>
+  </div>
+
+  <div class="tip"><strong>Weight-saving tips:</strong> Use compression stuff sacks for sleeping bags and down jackets — essential. Wear heaviest items (boots, fleece) on travel days. Leave safari/Zanzibar clothes in Summit Lodge storage. Pack clothing in large zip-lock bags for extra waterproofing and compression. Daypack is heavy mainly due to water weight — unavoidable and essential.</div>
+</div>
+</div>
+
+<!-- ═══ BUDGET PANEL ═══ -->
+<div id="panel-budget" class="panel">
+<div class="main">
+  <p class="sh">Full Trip Budget — Matt & Lynn</p>
+
+  <div class="stats-row">
+    <div class="sc"><div class="sc-num">$11,261</div><div class="sc-label">Confirmed paid</div></div>
+    <div class="sc"><div class="sc-num">~$9,700</div><div class="sc-label">Still owed</div></div>
+    <div class="sc"><div class="sc-num">~$22–24k</div><div class="sc-label">Total est.</div></div>
+  </div>
+
+  <div class="alert-box"><strong>Kilimanjaro balance of ~$5,090</strong> is due around <strong>May 4, 2026</strong> — your next major payment. Confirm exact amount and date with Tiffany Watson at ClimbKili soon.</div>
+
+  <!-- FLIGHTS -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">✈️</span><span class="cat-title" style="color:var(--flight)">Flights</span><span class="cat-range" style="color:var(--flight)">$5,481.16 — fully paid</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">JFK → ZRH → JRO (Swiss / Edelweiss) — Jul 3</div><div class="li-note">Booking ZGUWOY · Matt 24J/21D · Lynn 24K/21F · 2×23kg bags</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Feb 25 ✓</span></div></div><div class="li-right"><div class="li-amount">$3,189.60</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">JRO → ZNZ (Air Tanzania TC105) — Jul 18</div><div class="li-note">PNR 1BETT2 · Matt 8C · Lynn 8D</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Mar 29 ✓</span></div></div><div class="li-right"><div class="li-amount">$432.00</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">ZNZ → NBO → JFK (Kenya Airways) — Jul 24–25</div><div class="li-note">Res Y8XF7X · Economy Flex · 2×23kg · AmEx ***1005</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Apr 5 ✓</span></div></div><div class="li-right"><div class="li-amount">$1,859.56</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="cat-subtotal"><span>Flights total</span><span>$5,481.16 — fully paid ✓</span></div>
+    </div>
+  </div>
+
+  <!-- KILIMANJARO -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">⛰️</span><span class="cat-title" style="color:var(--kili)">Kilimanjaro — ClimbKili</span><span class="cat-range" style="color:var(--kili)">$6,490 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">Kili deposit — Matt & Lynn (2 × $350)</div><div class="li-note">ClimbKili · 8-Day Lemosho · non-refundable · paid to Todd via Venmo Dec 8</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Dec 8 ✓</span></div></div><div class="li-right"><div class="li-amount">$700</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Kili balance — Matt & Lynn (2 × $2,545)</div><div class="li-note">$2,895/person total minus $350 deposit · confirm exact amount with Tiffany Watson</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Due ~May 4</span><span class="badge b-crit">Upcoming!</span></div></div><div class="li-right"><div class="li-amount">$5,090</div><div class="li-when">Due ~May 4, 2026</div><div class="li-status s-due">Due soon</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Porter & guide tips</div><div class="li-note">~$250–300 per climber · USD cash · given at Mweka Gate on descent day (Jul 13)</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Bring USD cash</span></div></div><div class="li-right"><div class="li-amount">~$600</div><div class="li-when">Bring on trip</div><div class="li-status s-due">Bring cash</div></div></div>
+      <div class="cat-subtotal"><span>Kilimanjaro total</span><span>$700 paid · $5,690 remaining</span></div>
+    </div>
+  </div>
+
+  <!-- SAFARI -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">🦁</span><span class="cat-title" style="color:var(--safari)">Luxury Safari</span><span class="cat-range" style="color:var(--safari)">$4,260 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">Safari deposit — Matt & Lynn (30%)</div><div class="li-note">Paid to Todd via Venmo Dec 8 · 4 properties across 5 nights</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Dec 8 ✓</span></div></div><div class="li-right"><div class="li-amount">$1,278</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Safari balance (70% remaining)</div><div class="li-note">Due on arrival at first lodge (Villa Maua Jul 13) · confirm cash or card with Todd</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Due on arrival</span></div></div><div class="li-right"><div class="li-amount">$2,982</div><div class="li-when">Due Jul 13, 2026</div><div class="li-status s-due">Due on arrival</div></div></div>
+      <div class="cat-subtotal"><span>Safari total</span><span>$1,278 paid · $2,982 remaining</span></div>
+    </div>
+  </div>
+
+  <!-- ZANZIBAR -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">🏖️</span><span class="cat-title" style="color:var(--zanzi)">Zanzibar</span><span class="cat-range" style="color:var(--zanzi)">$1,200–2,300 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">Zanzibar hotels — your share (Tembo House 2 nts + Infinity Beach 4 nts)</div><div class="li-note">TBD from Todd · estimate based on typical luxury Zanzibar pricing</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-tbd">Awaiting Todd</span></div></div><div class="li-right"><div class="li-amount">$800–1,500</div><div class="li-status s-tbd">TBD</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Mnemba Atoll scuba dive — Jul 21 (2 people)</div><div class="li-note">Both PADI certified · 2-tank dive · book in advance for July · One Ocean / Fun Divers / Spanish Dancer</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Book in June</span></div></div><div class="li-right"><div class="li-amount">$150–300</div><div class="li-when">Book June 2026</div><div class="li-status s-due">Book ahead</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Stone Town spice tour — Jul 19</div><div class="li-note">Half-day guided UNESCO World Heritage tour</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">$50–100</div><div class="li-status s-due">Book ahead</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Food, drinks & spending — Zanzibar</div><div class="li-note">Meals at beach restaurants, sundowners, etc. (confirm if hotel is all-inclusive)</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">$200–400</div><div class="li-status s-tbd">Estimate</div></div></div>
+      <div class="cat-subtotal"><span>Zanzibar total est.</span><span>$1,200–2,300 — nothing paid yet</span></div>
+    </div>
+  </div>
+
+  <!-- GEAR -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">🎒</span><span class="cat-title" style="color:var(--kili-mid)">Gear & Equipment</span><span class="cat-range" style="color:var(--kili-mid)">$2,962–4,297 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">REI Order #9678 — sleeping bags, pads, duffels, liner, pump, Down Wash</div><div class="li-note">Nov 30, 2025 · Norwalk store</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-paid">Paid Nov 30 ✓</span></div></div><div class="li-right"><div class="li-amount">$1,615.04</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">REI Order #9677 — Lynn's Merino base layer top & bottoms</div><div class="li-note">Nov 30, 2025 · Norwalk store</div><div class="li-badges"><span class="badge b-lynn">Lynn</span><span class="badge b-paid">Paid Nov 30 ✓</span></div></div><div class="li-right"><div class="li-amount">$187.37</div><div class="li-status s-paid">Paid ✓</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Down puffy jackets — Matt & Lynn</div><div class="li-note">Buy now · critical for summit · REI Co-op 650, Patagonia Down Sweater</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Buy now</span><span class="badge b-crit">Priority</span></div></div><div class="li-right"><div class="li-amount">$300–550</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Lynn's waterproof shell jacket & pants</div><div class="li-note">REI Co-op Rainier, Marmot Minimalist, or Patagonia Torrentshell</div><div class="li-badges"><span class="badge b-lynn">Lynn</span><span class="badge b-due">Buy soon</span></div></div><div class="li-right"><div class="li-amount">$225–480</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Lynn's summit mitts/gloves</div><div class="li-note">Black Diamond Mercury Mitts or OR Alti Mitts</div><div class="li-badges"><span class="badge b-lynn">Lynn</span></div></div><div class="li-right"><div class="li-amount">$50–80</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Gaiters (mid-height) — Matt & Lynn</div><div class="li-note">OR Crossbow ~$45 each or OR Crocodile ~$75 each</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">$90–150</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Headlamps (new 400+ lm) — Matt & Lynn</div><div class="li-note">Black Diamond Spot 400 or Petzl Actik Core · existing ones kept as backup</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-crit">Critical</span></div></div><div class="li-right"><div class="li-amount">$90–120</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Hydration hose sleeves + Nalgene bottles</div><div class="li-note">CamelBak insulated tube ~$15 each · Nalgene 32oz wide-mouth ~$20 each</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">$55–85</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">GoPro Hero 13 Black + Enduro batteries (4–6)</div><div class="li-note">Existing older GoPro + both mounts already owned</div><div class="li-badges"><span class="badge b-matt">Matt</span></div></div><div class="li-right"><div class="li-amount">$450–470</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Blister kits — Matt & Lynn</div><div class="li-note">Moleskin, Compeed, Leukotape · ~$15–25 each</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">$30–50</div><div class="li-status s-due">To buy</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Hiking boots — Matt & Lynn (if needed)</div><div class="li-note">⏳ Assess existing boots first · if buying: Salomon Quest 4, Scarpa Zodiac, Merrell Moab 3</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-pend">Pending</span><span class="badge b-crit">Time sensitive</span></div></div><div class="li-right"><div class="li-amount">$0–700</div><div class="li-status s-pend">Assess first</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Anker 21W solar panel</div><div class="li-note">⏳ Pending decision · ~$60 · 13oz · leaning toward this over BioLite</div><div class="li-badges"><span class="badge b-both">Both</span><span class="badge b-pend">Deciding</span></div></div><div class="li-right"><div class="li-amount">$0–60</div><div class="li-status s-pend">Deciding</div></div></div>
+      <div class="cat-subtotal"><span>Gear total</span><span>$1,802 paid · $1,290–2,495 remaining</span></div>
+    </div>
+  </div>
+
+  <!-- HEALTH & ADMIN -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">💊</span><span class="cat-title" style="color:var(--blue)">Health, Visas & Insurance</span><span class="cat-range" style="color:var(--blue)">$580–810 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">Tanzania e-Visa — Matt & Lynn (2 × $100)</div><div class="li-note">Multiple Entry · visa.immigration.go.tz · apply by mid-June · 1–10 day processing</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Apply mid-June</span></div></div><div class="li-right"><div class="li-amount">$200</div><div class="li-when">Apply June 2026</div><div class="li-status s-due">Not yet done</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Malarone malaria pills — Matt & Lynn</div><div class="li-note">40 pills each · varies by insurance coverage</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-due">Pick up Rx</span></div></div><div class="li-right"><div class="li-amount">~$150–200</div><div class="li-status s-due">Pick up Rx</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Typhoid + Zithromax prescriptions</div><div class="li-note">All prescribed · pick up from pharmacy</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span></div></div><div class="li-right"><div class="li-amount">~$30–60</div><div class="li-status s-due">Pick up Rx</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Travel insurance</div><div class="li-note">Must cover high-altitude trekking + medical evacuation + cancellation · get this soon</div><div class="li-badges"><span class="badge b-both">Matt & Lynn</span><span class="badge b-crit">Get soon</span></div></div><div class="li-right"><div class="li-amount">~$200–350</div><div class="li-status s-due">Get soon</div></div></div>
+      <div class="cat-subtotal"><span>Health & admin total</span><span>~$580–810 est.</span></div>
+    </div>
+  </div>
+
+  <!-- ON-TRIP -->
+  <div class="cat-block">
+    <div class="cat-hdr" onclick="tog(this)"><span class="cat-icon">💵</span><span class="cat-title">On-Trip Spending</span><span class="cat-range">$450–800 est.</span><span class="cat-toggle">▾</span></div>
+    <div class="cat-body">
+      <div class="li-row"><div class="li-left"><div class="li-name">Meals in Arusha (arrival + post-summit celebration)</div><div class="li-note">Summit Lodge breakfast included · dinner/lunch extra on arrival day</div></div><div class="li-right"><div class="li-amount">~$100–150</div><div class="li-status s-tbd">Estimate</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Souvenirs, shopping, Kili certificate</div><div class="li-note">Stone Town market, Tanzanian crafts, summit cert</div></div><div class="li-right"><div class="li-amount">~$150–300</div><div class="li-status s-tbd">Estimate</div></div></div>
+      <div class="li-row"><div class="li-left"><div class="li-name">Contingency buffer</div><div class="li-note">Tips, snacks, unexpected expenses</div></div><div class="li-right"><div class="li-amount">~$200–350</div><div class="li-status s-tbd">Buffer</div></div></div>
+      <div class="cat-subtotal"><span>On-trip est.</span><span>~$450–800</span></div>
+    </div>
+  </div>
+
+  <!-- GRAND TOTAL -->
+  <div class="grand-total">
+    <div class="gt-title">Complete Trip Budget — Matt & Lynn</div>
+    <div class="gt-row paid"><span>✓ Flights (all 3 confirmed)</span><span>$5,481</span></div>
+    <div class="gt-row paid"><span>✓ Kili deposit (paid to Todd)</span><span>$700</span></div>
+    <div class="gt-row paid"><span>✓ Safari deposit (paid to Todd)</span><span>$1,278</span></div>
+    <div class="gt-row paid" style="border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:10px;margin-bottom:4px"><span>✓ Gear — REI purchases</span><span>$1,802</span></div>
+    <div class="gt-row owed"><span>Kili balance (~May 4)</span><span>$5,090</span></div>
+    <div class="gt-row owed"><span>Safari balance (on arrival Jul 13)</span><span>$2,982</span></div>
+    <div class="gt-row owed"><span>Zanzibar hotels + activities (TBD from Todd)</span><span>$1,200–2,300</span></div>
+    <div class="gt-row owed"><span>Remaining gear to buy</span><span>$1,290–2,495</span></div>
+    <div class="gt-row owed"><span>Health, visas & insurance</span><span>$580–810</span></div>
+    <div class="gt-row owed"><span>Porter tips + on-trip spending</span><span>$1,050–1,400</span></div>
+    <div class="gt-row total"><span>TOTAL ESTIMATED (2 people)</span><span>~$22,000–24,000</span></div>
+  </div>
+
+  <div class="tip" style="margin-top:1rem"><strong>Next major payment:</strong> Kili balance ~$5,090 due ~May 4. Confirm exact amount with Tiffany Watson at ClimbKili. <strong>Biggest unknown:</strong> Zanzibar hotel cost from Todd — ask him soon.</div>
+
+  <!-- PAYMENT TIMELINE -->
+  <div class="sub" style="margin-top:1.5rem">Payment Timeline</div>
+  <div class="tl-block">
+    <div class="tl-sec">Already paid</div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">Nov 30, 2025</div><div class="tl-title">REI gear purchased</div><div class="tl-amount">$1,802.41</div><div class="tl-note">Orders #9677 + #9678 · Norwalk</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">Dec 8, 2025</div><div class="tl-title">Kili deposit + Safari deposit → Todd via Venmo</div><div class="tl-amount">$1,978.00</div><div class="tl-note">$700 Kili + $1,278 Safari</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">Feb 25, 2026</div><div class="tl-title">Outbound flights paid (Swiss ZGUWOY)</div><div class="tl-amount">$3,189.60</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">Mar 29, 2026</div><div class="tl-title">Internal flight JRO→ZNZ (Air Tanzania)</div><div class="tl-amount">$432.00</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">Apr 5, 2026</div><div class="tl-title">Return flight ZNZ→NBO→JFK (Kenya Airways)</div><div class="tl-amount">$1,859.56</div></div>
+    <div class="tl-sec">Coming up</div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--amber-dark)"></div><div class="tl-date">Now — April</div><div class="tl-title">Buy remaining gear — down jackets, headlamps, GoPro</div><div class="tl-amount">~$700–1,200</div><div class="tl-note">Prioritize down jackets — useful for training hikes now</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--red)"></div><div class="tl-date">~May 4, 2026</div><div class="tl-title">Kilimanjaro balance due to ClimbKili</div><div class="tl-amount">~$5,090</div><div class="tl-note">Confirm exact amount with Tiffany Watson</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--amber-dark)"></div><div class="tl-date">May 2026</div><div class="tl-title">REI Anniversary Sale — remaining gear</div><div class="tl-amount">~$400–800</div><div class="tl-note">Lynn's shell, gaiters, Nalgenes, blister kits · typically 20–30% off</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--amber-dark)"></div><div class="tl-date">Mid-June 2026</div><div class="tl-title">Tanzania e-Visa applications — Matt & Lynn</div><div class="tl-amount">$200</div><div class="tl-note">visa.immigration.go.tz · $100 each</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--amber-dark)"></div><div class="tl-date">June 2026</div><div class="tl-title">Mnemba Atoll dive + Zanzibar activities pre-booked</div><div class="tl-amount">~$200–400</div></div>
+    <div class="tl-sec">On the trip</div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--flight-light)"></div><div class="tl-date">Jul 13, 2026</div><div class="tl-title">Porter & guide tips at Mweka Gate</div><div class="tl-amount">~$600 USD cash</div></div>
+    <div class="tl-item"><div class="tl-dot" style="background:var(--flight-light)"></div><div class="tl-date">Jul 13, 2026</div><div class="tl-title">Safari balance on arrival at Villa Maua</div><div class="tl-amount">~$2,982</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ HEALTH PANEL ═══ -->
+<div id="panel-health" class="panel">
+<div class="main">
+  <p class="sh">Health & Medications</p>
+  <div class="success-box">Doctor appointments completed ✓ — all prescriptions obtained. Whole group on same medications.</div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600">Malarone (daily malaria prophylaxis)</span><span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--flight-pale);color:var(--flight)">Prescription · Both</span></div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.7">40 pills each · 1 daily with food · <strong style="color:var(--text)">Start July 2</strong> (1 day before departure) · continue through trip · <strong style="color:var(--red)">Continue July 25–26</strong> (2 days after return). Todd confirmed whole group on same protocol.</div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600">Typhoid (oral pills)</span><span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--flight-pale);color:var(--flight)">4 pills · every other day</span></div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.7"><strong style="color:var(--red)">Start by June 25</strong> — must complete before July 3<br>Jun 25 (Pill 1) · Jun 27 (Pill 2) · Jun 29 (Pill 3) · Jul 1 (Pill 4 — done ✓)</div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:14px;font-weight:600">Azithromycin / Zithromax</span><span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--green-pale);color:var(--green)">Take only if ill</span></div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.7">1,000mg (2 × 500mg pills) if feeling ill · Todd has extra for whole group · pack in carry-on</div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:10px;">
+    <div style="font-size:14px;font-weight:600;margin-bottom:8px">Vaccines & Immunity</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.9">
+      <div>🟡 <strong>Tetanus:</strong> Confirm booster current (required every 10 years)</div>
+      <div>🟡 <strong>Hepatitis A:</strong> If never vaccinated and Hep A negative — get vaccinated now</div>
+      <div>🟡 <strong>Measles / Hep B:</strong> Not a concern if previously vaccinated (confirmed by Todd's ID doctor)</div>
+      <div>🟢 <strong>Yellow Fever: Not required ✓</strong> — Zurich routing clean · Nairobi is airside transit only · both doctors confirmed</div>
+    </div>
+  </div>
+
+  <div class="alert-box"><strong>Altitude sickness:</strong> Symptoms (headache, nausea, fatigue) can start from 8,000'. Drink 3–4 liters water daily. Never ascend with symptoms — tell your guide. The Lemosho route's gradual profile significantly reduces risk but it can affect anyone regardless of fitness.</div>
+  <div class="info-box"><strong>Diving after altitude:</strong> After 2 weeks above 16,000' on Kilimanjaro, consult with your dive operator about any recommended wait time before diving to depth.</div>
+  <div class="info-box"><strong>Zanzibar local insurance (ZIC):</strong> From Oct 2024, visitors must purchase Zanzibar Insurance Corporation insurance — $44 USD, valid 90 days. Confirm if included in Todd's booking.</div>
+  <div class="info-box"><strong>Electrolytes:</strong> Todd is providing electrolyte packets for the whole group. Confirm your share. Use daily on the mountain — especially on longer days and after summit night.</div>
+</div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Phase selector
+function setPhase(p,el){
+  document.querySelectorAll('.pb').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.pc').forEach(c=>c.classList.remove('active'));
+  const pc=document.getElementById('pc-'+p);
+  if(pc)pc.classList.add('active');
+}
+
+// Tab switcher
+function sw(tab,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+
+// To-do checklist
+function tchk(cb){
+  const li=cb.closest('li');
+  cb.checked?li.classList.add('done'):li.classList.remove('done');
+  updTodo();
+}
+function updTodo(){
+  const all=document.querySelectorAll('#panel-todo input[type=checkbox]');
+  const done=document.querySelectorAll('#panel-todo input[type=checkbox]:checked');
+  const t=all.length,d=done.length,pct=t>0?Math.round(d/t*100):0;
+  document.getElementById('td-done').textContent=d;
+  document.getElementById('td-left').textContent=t-d;
+  document.getElementById('td-bar').style.width=pct+'%';
+  document.getElementById('td-pct').textContent=pct+'%';
+  const dep=new Date('2026-07-03');
+  document.getElementById('td-days').textContent=Math.max(0,Math.ceil((dep-new Date())/86400000));
+}
+function ftd(phase,btn){
+  document.querySelectorAll('.pf .fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#panel-todo .sub[data-tg], #panel-todo .checklist[data-tg]').forEach(el=>{
+    el.style.display=phase==='all'||el.dataset.tg===phase?'':'none';
+  });
+}
+
+// Gear checklist
+function gchk(cb){
+  const item=cb.closest('.gear-item');
+  cb.checked?item.classList.add('gdone'):item.classList.remove('gdone');
+  updGear();
+}
+function updGear(){
+  const all=document.querySelectorAll('#panel-gear .gear-item input[type=checkbox]');
+  const chkd=document.querySelectorAll('#panel-gear .gear-item input[type=checkbox]:checked');
+  const t=all.length,d=chkd.length,pct=t>0?Math.round(d/t*100):0;
+  document.getElementById('g-done').textContent=d;
+  document.getElementById('g-bar').style.width=pct+'%';
+  document.getElementById('g-pct').textContent=pct+'%';
+  // Count have vs need
+  const gotAll=document.querySelectorAll('#panel-gear .gear-item.got');
+  const needAll=document.querySelectorAll('#panel-gear .gear-item:not(.got):not(.pending-g)');
+  document.getElementById('g-got').textContent=gotAll.length;
+  document.getElementById('g-need').textContent=needAll.length;
+}
+function fg(f,btn){
+  document.querySelectorAll('#panel-gear .pf .fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#panel-gear .gear-item').forEach(item=>{
+    const g=item.dataset.g||'';
+    let show=false;
+    if(f==='all')show=true;
+    else if(f==='got')show=item.classList.contains('got');
+    else if(f==='need')show=!item.classList.contains('got');
+    else if(f==='matt')show=g.includes('matt')||g.includes('both');
+    else if(f==='lynn')show=g.includes('lynn')||g.includes('both');
+    else if(f==='duffel')show=g.includes('duffel');
+    else if(f==='daypack')show=g.includes('daypack');
+    item.style.display=show?'flex':'none';
+  });
+}
+
+// Budget toggle
+function tog(hdr){
+  const body=hdr.nextElementSibling;
+  const arrow=hdr.querySelector('.cat-toggle');
