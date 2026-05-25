@@ -1,6 +1,6 @@
 # Tanzania Trip 2026 — Trip Context
 ## Source of truth for Cowork updates and Claude Code deployments
-## Last updated: 2026-05-24 · All known issues resolved · index.html in sync
+## Last updated: 2026-05-24
 
 ---
 
@@ -197,6 +197,7 @@
 | Summit mitts/gloves | Lynn | Black Diamond Mercury Mitts or OR Alti Mitts · $50–80 |
 | Blister kit | Matt & Lynn | Leukotape P + Compeed + moleskin · $15–25 each |
 | AAA lithium batteries | Both | 2 sets of 3 · Energizer Ultimate Lithium · summit night headlamp backup |
+| Slim money belt | Matt & Lynn | Eagle Creek Silk Undercover or Pacsafe Cashsafe · ~$20–30 each · worn under base layer |
 
 ---
 
@@ -257,6 +258,69 @@
 
 ---
 
+## CASH & CURRENCY
+
+**Total recommended USD cash to carry: ~$5,500**
+
+All payments in Tanzania must be in USD. Bills must be **post-2013 issue** (check date near Federal Reserve seal) — pre-2006 bills are widely refused; older bills may get a worse rate or be rejected entirely. Bring clean, unfolded notes.
+
+### Cash breakdown
+
+| Category | Amount | Notes |
+|---|---|---|
+| Safari balance | $2,982 | CASH — confirmed with Todd · due Jul 13 on arrival |
+| Porter tips | ~$600 | ~$250–300/person · USD · Mweka Gate Jul 13 |
+| Zanzibar hotels | $1,314 | Tembo House $314 + Infinity Beach $1,000 · confirm card accepted when booking |
+| Mnemba Atoll dive | ~$225 | Mid-estimate · confirm payment method when booking |
+| Stone Town spice tour | ~$75 | Cash expected |
+| On-trip spending | ~$600 | Meals, local transport, souvenirs, contingency |
+| **Total** | **~$5,796** | **Bring $5,500 in cash · use card where accepted to reduce cash carried** |
+
+### Denomination plan
+
+- **$100 bills** (~$4,000) — safari balance and hotel payments
+- **$50 bills** (~$900) — remaining larger purchases
+- **$20 bills** (~$600) — porter tips and daily spending · pre-sort into two tip envelopes before departure
+
+### Withdrawal plan — online banking (no branch access)
+
+ATM-only strategy: check your daily ATM limit with your bank and request a temporary increase if possible. Standard limits are $300–500/day; some premium accounts allow $1,000–2,000.
+
+**Option A — standard limit (~$500/day):** Start June 9 · withdraw daily or every-other-day for ~12 days = ~$5,500 by June 20.
+
+**Option B — elevated limit (~$1,000/day):** Start June 16 · 6 withdrawals over 10 days = ~$5,500 by June 26.
+
+**Tip:** Charles Schwab checking reimburses all ATM fees worldwide and has a $1,000 daily ATM limit — worth opening if you don't already have it, especially for on-trip ATM access in Zanzibar as backup.
+
+Store cash in two separate locations while traveling (e.g., money belt + locked luggage) and don't carry the full safari balance in one place until needed.
+
+### Security & Cash Handling
+
+**Core rule: split and layer.** Never put all cash in one place, and split it between Matt and Lynn. Agree on who holds what before leaving the hotel each morning.
+
+**Money belts (worn under base layer, against skin):** Both Matt and Lynn carry one. Eagle Creek Silk Undercover or Pacsafe Cashsafe are recommended — slim, invisible under clothing, and secure. On Kilimanjaro you're in base layers the whole time so it won't feel awkward.
+
+**Suggested split:**
+- Matt's money belt: Safari balance ($2,982 in $100 bills, sealed envelope) + half the hotel cash
+- Lynn's money belt: Tip envelopes ($600 in $20s, pre-sorted) + remaining spending cash
+
+**Phase-by-phase handling:**
+
+| Phase | Strategy |
+|---|---|
+| Summit Lodge Arusha (Jul 4–5) | Use hotel safe overnight · money belt for any outings |
+| Kilimanjaro (Jul 6–12) | Money belt under base layer at all times · never put cash in porter duffel |
+| Villa Maua + Safari (Jul 13–17) | Pay safari balance Jul 13 on arrival — biggest cash obligation gone · use in-room safes at camps |
+| Zanzibar (Jul 18–24) | Money belt in Stone Town medina · use in-room safe at Infinity Beach for amounts not being spent that day |
+
+**Safari balance:** Keep $2,982 in a sealed envelope, separate from all other cash. Hand it over as a single envelope — no counting in public.
+
+**Tip envelopes:** Pre-sort into individual porter envelopes before departure. Handled and done at Mweka Gate in minutes.
+
+**Emergency backup:** Each person keeps $200 tucked separately (e.g., in daypack zipper pocket) in case of separation. Both should know where the other's backup stash is.
+
+---
+
 ## TO-DO LIST
 
 ### ✅ Completed
@@ -297,7 +361,9 @@
 - [ ] Matt: Hep B Shot 2 (~June 6) — calendar reminder needed
 - [ ] Pre-book Mnemba Atoll scuba dive Jul 21 (One Ocean, Fun Divers, or Spanish Dancer Divers)
 - [ ] Book Stone Town spice tour — Jul 19
-- [ ] Prepare USD cash: porter tips ~$600 + safari balance ~$2,982 + spending
+- [ ] Check ATM daily withdrawal limit with online bank · request temporary increase if possible (do this ASAP)
+- [ ] Begin ATM cash withdrawals — target $5,500 total · start June 9 if $500/day limit, June 16 if $1,000/day limit
+- [ ] Sort and count cash before packing — prepare two tip envelopes ($300 in $20s) and separate safari balance ($2,982 in $100s)
 - [ ] Notify credit cards — Tanzania Jul 3–25
 - [ ] Download offline maps (Maps.me or Google offline)
 - [ ] Full gear shakedown — weigh duffels (must be under 15kg / 33 lbs)
@@ -342,4 +408,4 @@
 ## KNOWN ISSUES IN INDEX.HTML
 *(To be fixed on next Claude Code push)*
 
-✅ All known issues resolved as of May 24, 2026. index.html is in sync with TRIP_CONTEXT.md.
+None — all issues resolved 2026-05-24
