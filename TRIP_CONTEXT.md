@@ -1,6 +1,6 @@
 # Tanzania Trip 2026 — Trip Context
 ## Source of truth for Cowork updates and Claude Code deployments
-## Last updated: 2026-05-24
+## Last updated: 2026-06-06
 
 ---
 
@@ -90,6 +90,17 @@
 | Swiss/Edelweiss outbound | Booking ZGUWOY · Jul 3 |
 | Kenya Airways return | Res Y8XF7X · Jul 24 |
 
+## TRAVEL DOCUMENTS & VISAS
+
+| Document | Matt | Lynn |
+|---|---|---|
+| Passport | Valid past Jan 25, 2027 ✓ | Valid past Jan 25, 2027 ✓ |
+| Tanzania e-Visa | 🟡 Application submitted Jun 5 · App ID: **26UR-N06V-LI05** · awaiting approval | 🟡 Application submitted Jun 5 · App ID: **26GE-K06K-HS05** · awaiting approval |
+
+**Portal:** visa.immigration.go.tz · $100 per person  
+**Expected approval:** ~June 14 (based on 9-day turnaround for Todd & Victoria in the group)  
+**Action:** Check approval status around June 14 · print both approved visas before departure
+
 ---
 
 ## TRAVEL INSURANCE
@@ -114,7 +125,7 @@
 | ATO | Atovaquone-Proguanil 250-100 (Malarone) | CVS Apr 27 · $58.44 ✓ | Picked up · $10.00 ✓ |
 | AZI | Azithromycin 500mg (Zithromax) | CVS Apr 27 · $13.56 ✓ | Picked up · $7.49 ✓ |
 | ACE | Acetazolamide ER 500mg (Diamox) | CVS Apr 27 · $21.80 ✓ | Picked up · $10.00 ✓ |
-| — | Typhoid (oral · 4 pills every other day) | In progress (2 of 4 taken) | Course fully completed ✓ |
+| — | Typhoid (oral · 4 pills every other day) | Course fully completed ✓ | Course fully completed ✓ |
 
 **Diamox note:** 500mg ER (Extended Release) — confirm dosing with Dr. Chesky. Start Jul 5–6 at Summit Lodge.  
 **Malarone:** Start July 2 · daily with food · continue July 25–26 after return.  
@@ -127,9 +138,9 @@
 | Tetanus | ✅ Current | ✅ Current |
 | Measles | ✅ Confirmed immunity | ✅ Confirmed immunity |
 | Yellow Fever | ✅ Not required | ✅ Not required |
-| Typhoid | 🟡 In progress (2/4 taken) | ✅ Completed |
+| Typhoid | ✅ Completed | ✅ Completed |
 | Hepatitis A | — | ✅ Shot 1 May 6 · Shot 2 November |
-| Hepatitis B | 🟡 Shot 1 May 6 · Shot 2 ~June 6 · Shot 3 November | — |
+| Hepatitis B | 🟡 Shot 1 May 6 · Shot 2 June 12 (scheduled) · Shot 3 November | — |
 
 ---
 
@@ -159,6 +170,7 @@
 | Sun hat / cap | Matt & Lynn | Already owned |
 | Light liner gloves | Matt & Lynn | Already owned |
 | Summit mitts / gloves | Matt | Already owned (adequate) |
+| Black Diamond Mercury Mittens — Women's (Black, M) | Lynn | REI Order #A401463106 · Jun 6 · $148.84 · delivery Jun 13 |
 | Smartwool hiking socks (3 pairs each) | Matt & Lynn | REI Norwalk May 16 |
 | Merino wool liner socks (2 pairs each) | Matt & Lynn | REI Norwalk May 16 |
 | Hiking boots (Vasque 7482 GTX) | Matt | Existing · assessed good May 10 |
@@ -197,7 +209,65 @@
 | Summit mitts/gloves | Lynn | Black Diamond Mercury Mitts or OR Alti Mitts · $50–80 |
 | Blister kit | Matt & Lynn | Leukotape P + Compeed + moleskin · $15–25 each |
 | AAA lithium batteries | Both | 2 sets of 3 · Energizer Ultimate Lithium · summit night headlamp backup |
-| Slim money belt | Matt & Lynn | Eagle Creek Silk Undercover or Pacsafe Cashsafe · ~$20–30 each · worn under base layer |
+| Eagle Creek Undercover Neck Wallet Deluxe ×2 (Khaki) | Matt & Lynn | Amazon Order #112-1844732-0503411 · Jun 6 · $37.22 · arriving Jun 10 |
+| Celestron Nature DX ED Glass Binoculars 8×42 | Lynn (shared) | ED glass · ideal spec for safari · excellent low-light performance for dawn game drives · one pair sufficient |
+| Safari shirts (long-sleeve, neutral) | Matt & Lynn | 2–3 each · khaki/tan/olive/grey only · Columbia PFG or ExOfficio · moisture-wicking · to assess |
+| Safari pants (lightweight, neutral) | Matt & Lynn | Khaki/tan/olive · Columbia Silver Ridge or REI Sahara · ~$50–65 · needed for both |
+| Buff / neck gaiter (neutral color) | Matt & Lynn | ✅ Have it |
+| Swimwear | Matt & Lynn | ✅ Have it |
+| Rashguard | Matt & Lynn | ✅ Have it |
+| Beach sandals / flip flops | Matt & Lynn | ✅ Have it |
+| Light casual resort wear | Matt & Lynn | ✅ Have it |
+| Dive masks | Matt & Lynn | Bringing own masks · rental masks don't fit well |
+| Electronics dust bag | Matt | GoPro Mission 1 Pro is dust/waterproof — not needed · use ziplock for any non-sealed items |
+
+---
+
+## SAFARI & ZANZIBAR PACKING
+
+### Climate Overview
+
+| Phase | Dates | Conditions |
+|---|---|---|
+| Safari — Arusha/Tarangire | Jul 13–14 | 70–80°F days · 55°F evenings |
+| Safari — Serengeti/Ngorongoro | Jul 15–17 | 50–55°F dawn game drives · 80–85°F midday · very dusty |
+| Zanzibar — Stone Town | Jul 18–19 | 80–85°F · humid · Muslim city · modest dress required |
+| Zanzibar — Matemwe beach | Jul 20–24 | 80–85°F · tropical · sea breeze · resort setting |
+
+### Safari Packing Notes
+
+**Color rule — non-negotiable:** Khaki, tan, olive, sage, grey only. No white (turns brown in Serengeti dust immediately). No bright colors (spook wildlife). No dark blue or black (attracts tsetse flies — their bite is unpleasant).
+
+**Carries over from Kilimanjaro gear:**
+- Fleece / mid-layers — perfect for 50°F dawn game drives ✓
+- Sun hat ✓
+- grinderPUNCH wraparound sunglasses ✓
+- Camp shoes ✓
+- Hiking pants (if neutral-colored) ✓
+
+**Still needed for Safari:**
+- 2–3 neutral long-sleeve shirts — sun and insect protection on morning/evening drives
+- Buff or neck gaiter — Serengeti dust gets into everything; cover nose and mouth on drives
+- Binoculars — Lynn has a pair (confirm spec is 8×42 or equivalent · one pair is sufficient for two people in the same vehicle)
+- Electronics dust bag for GoPro
+
+### Zanzibar Packing Notes
+
+**Stone Town (Jul 18–19):** Deeply Muslim city. Shoulders and knees must be covered — this is expected and respectful, not optional. Lightweight hiking pants work well. Light cotton or linen top covering shoulders. Comfortable walking shoes (camp shoes may be fine).
+
+**Matemwe Beach / Infinity Beach (Jul 20–24):**
+- Swimwear (not currently in gear list — must add)
+- Rashguard for Mnemba Atoll dive and snorkeling: prevents coral cuts, protects from intense tropical sun at the surface between dives. Zanzibar water in July is ~80°F so a full wetsuit isn't necessary; dive operator can provide a 3mm shorty if preferred.
+- Bring own dive masks — rental masks never fit as well
+- Dive operator (One Ocean / Fun Divers / Spanish Dancer) provides: BCD, regulator, wetsuit, tank, fins
+- Beach sandals or flip flops
+- 1–2 light casual outfits for resort dinners (not hiking clothes)
+
+### Luggage Strategy for Safari + Zanzibar
+
+- Suitcase/main bag stores at Summit Lodge during Kilimanjaro climb (Jul 6–12) — pick up on descent Jul 13
+- **⚠️ Bush plane / charter transfer warning:** Small East African aircraft used for safari camp transfers typically require **soft-sided bags only**, strict 15kg / 33 lbs limit, and specific size restrictions. Hard-shell suitcases are often refused. Confirm transfer method with Todd/ClimbKili and whether a soft bag is required for any legs between camps.
+- After Kili: change into safari clothes at Summit Lodge or Villa Maua before first game drive
 
 ---
 
@@ -239,6 +309,9 @@
 | CVS Apr 27 | Matt prescriptions (ACE + ATO + AZI) | $93.80 | |
 | Picked up | Lynn prescriptions (ACE + ATO + AZI) | $27.49 | |
 | Costco | Matt typhoid pills | ~$150 est. | Exact cost TBD |
+| Jun 6, 2026 | Black Diamond Mercury Mittens — Lynn · REI Order #A401463106 | $148.84 | Amex ***1005 · delivery Jun 13 |
+| Jun 6, 2026 | Eagle Creek Neck Wallets ×2 · Amazon Order #112-1844732-0503411 | $37.22 | Arriving Jun 10 |
+| Jun 6, 2026 | Energizer AAA batteries + Welnove blister bandages · Amazon Order #112-9584081-1248254 | $54.73 | Arriving overnight |
 
 ### Still Owed
 
@@ -308,8 +381,8 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 
 | Phase | Strategy |
 |---|---|
-| Summit Lodge Arusha (Jul 4–5) | Use hotel safe overnight · money belt for any outings |
-| Kilimanjaro (Jul 6–12) | Money belt under base layer at all times · never put cash in porter duffel |
+| Summit Lodge Arusha (Jul 4–5) | In-room safe deposit box in every room · front desk secure storage available 24hrs · use for bulk cash on arrival |
+| Kilimanjaro (Jul 6–12) | Leave safari balance + bulk cash in Summit Lodge front desk safe storage on checkout Jul 6 · carry only tip money + emergency backup in money belt · confirm arrangement with ClimbKili/Tiffany Watson before departure |
 | Villa Maua + Safari (Jul 13–17) | Pay safari balance Jul 13 on arrival — biggest cash obligation gone · use in-room safes at camps |
 | Zanzibar (Jul 18–24) | Money belt in Stone Town medina · use in-room safe at Infinity Beach for amounts not being spent that day |
 
@@ -356,9 +429,10 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 
 ### 🟡 June 2026
 
-- [ ] Tanzania e-Visa — Matt (mid-June · visa.immigration.go.tz · $100)
-- [ ] Tanzania e-Visa — Lynn (same portal · $100)
-- [ ] Matt: Hep B Shot 2 (~June 6) — calendar reminder needed
+- [x] Tanzania e-Visa — Matt · Application submitted Jun 5 · App ID: 26UR-N06V-LI05 · awaiting approval ✓
+- [x] Tanzania e-Visa — Lynn · Application submitted Jun 5 · App ID: 26GE-K06K-HS05 · awaiting approval ✓
+- [ ] Check both visa approval statuses around June 14 (Todd & Victoria got theirs in 9 days) · print both when approved
+- [ ] Matt: Hep B Shot 2 — scheduled June 12
 - [ ] Pre-book Mnemba Atoll scuba dive Jul 21 (One Ocean, Fun Divers, or Spanish Dancer Divers)
 - [ ] Book Stone Town spice tour — Jul 19
 - [ ] Check ATM daily withdrawal limit with online bank · request temporary increase if possible (do this ASAP)
@@ -368,14 +442,19 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 - [ ] Download offline maps (Maps.me or Google offline)
 - [ ] Full gear shakedown — weigh duffels (must be under 15kg / 33 lbs)
 - [ ] Confirm electrolyte supply with Todd
-- [ ] Matt: complete typhoid course (~2 more pills remaining)
+- [ ] Confirm Summit Lodge will hold cash in front desk safe during Kilimanjaro climb (Jul 6–12) — ask ClimbKili/Tiffany Watson to arrange on checkout morning
+- [ ] Confirm safari transfer method with Todd/ClimbKili — check if any legs use small bush planes requiring soft-sided bags (15kg limit) · hard-shell suitcase may not be allowed
+- [x] Binoculars confirmed — Celestron Nature DX ED 8×42 · ideal for safari ✓
+- [ ] Purchase safari pants — Matt & Lynn · khaki/tan/olive · Columbia Silver Ridge or REI Sahara · ~$50–65 each
+- [ ] Assess and purchase safari shirts if needed — 2–3 each · long-sleeve · neutral colors · Columbia PFG or ExOfficio
+- [x] Matt: typhoid course completed ✓
 - [ ] Lynn: continue breaking in new boots — back-to-back trail hikes
 
 ### 🛒 Gear Still to Buy
 
-- [ ] Lynn summit mitts/gloves (Black Diamond Mercury Mitts or OR Alti Mitts · $50–80)
-- [ ] Blister kit — Matt & Lynn (Leukotape P + Compeed · $15–25 each)
-- [ ] AAA lithium batteries — 2 sets of 3 (Energizer Ultimate Lithium · summit night backup)
+- [x] Lynn summit mitts — Black Diamond Mercury Mittens · REI Order #A401463106 · Jun 6 · $148.84 · delivery Jun 13 ✓
+- [x] Blister bandages — Welnove Gel Hydrocolloid 21ct · Amazon Order #112-9584081-1248254 · Jun 6 ✓
+- [x] AAA lithium batteries — Energizer Ultimate Lithium 24ct · Amazon Order #112-9584081-1248254 · Jun 6 · arriving overnight ✓
 
 ### 📋 Pre-departure (July 1–3)
 
@@ -408,4 +487,4 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 ## KNOWN ISSUES IN INDEX.HTML
 *(To be fixed on next Claude Code push)*
 
-None — all issues resolved 2026-05-24
+None — all 5 issues resolved 2026-06-06
