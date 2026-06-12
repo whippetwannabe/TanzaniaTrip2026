@@ -1,6 +1,6 @@
 # Tanzania Trip 2026 — Trip Context
 ## Source of truth for Cowork updates and Claude Code deployments
-## Last updated: 2026-06-06
+## Last updated: 2026-06-11 · No known issues — all deployed
 
 ---
 
@@ -86,6 +86,7 @@
 | World Nomads Customer Service | 1-844-207-1930 |
 | World Nomads Claims | worldnomads-us.eclaims.csaclaims.com |
 | Infinity Beach Hotel | Conf# 5891793900 |
+| One Ocean Diving — Matemwe | info@zanzibaroneocean.com · zanzibaroneocean.com · +255 777 473 128 (Matemwe direct, 8am–4pm) · +255 774 310 003 (general/WhatsApp) |
 | Air Tanzania TC105 | PNR 1BETT2 · Jul 18 |
 | Swiss/Edelweiss outbound | Booking ZGUWOY · Jul 3 |
 | Kenya Airways return | Res Y8XF7X · Jul 24 |
@@ -118,6 +119,15 @@
 
 ## HEALTH & MEDICATIONS
 
+### OTC Medications — Have It ✓
+
+| Item | Notes |
+|---|---|
+| Imodium (loperamide) | Anti-diarrheal · pack in carry-on |
+| Naproxen (Aleve) | Pain/anti-inflammatory · good for Kili descent soreness |
+| Tums / Pepto-Bismol | Antacid for unfamiliar foods |
+| Nuun electrolyte tablets | Use daily on Kilimanjaro · mix into Nalgene |
+
 ### Prescriptions — ALL PICKED UP ✓
 
 | Rx | Drug | Matt | Lynn |
@@ -140,7 +150,7 @@
 | Yellow Fever | ✅ Not required | ✅ Not required |
 | Typhoid | ✅ Completed | ✅ Completed |
 | Hepatitis A | — | ✅ Shot 1 May 6 · Shot 2 November |
-| Hepatitis B | 🟡 Shot 1 May 6 · Shot 2 June 12 (scheduled) · Shot 3 November | — |
+| Hepatitis B | 🟡 Shot 1 May 6 · Shot 2 June 12 (scheduled) · Shot 3 November | ✅ Prior immunity confirmed — no shots needed |
 
 ---
 
@@ -194,6 +204,37 @@
 | Hand & Toe Warmers variety pack (30 hand + 10 toe) | Matt & Lynn | Amazon Order #112-8526923-1482635 · May 24 · $31.89 |
 | All Rx prescriptions | Matt & Lynn | See Health section · carry-on only |
 | Down Wash | Both | REI #9678 |
+| REI Sahara Convertible Pants (Asphalt, 30×32) | Matt | REI Purchase #8177 · Jun 6 · safari pants ✓ |
+| REI Sahara Convertible Pants (Burlap, Size 0) | Lynn | REI Purchase #8177 · Jun 6 · safari pants ✓ |
+| REI Sahara Shade Hoodie (Olive Ridge Heather, M) | Matt | REI Purchase #8177 · Jun 6 · safari long-sleeve ✓ |
+| REI Sahara Shade Hoodie (Harvest Sage Heather, XS) | Lynn | REI Purchase #8177 · Jun 6 · safari long-sleeve ✓ |
+| REI Sahara Shade T-Shirt (Shell White, XS) | Lynn | REI Purchase #8177 · Jun 6 · Zanzibar/resort wear (not safari — white not suitable for game drives) |
+| North Face Sunriser Long-Sleeve Shirt (Bright Foam, Kids' XL) | Lynn | REI Purchase #8177 · Jun 6 · fits perfectly · extra base layer / sun shirt |
+| Smartwool Intraknit Merino Base Layer Bottoms (Black, M) | Matt | REI Purchase #8177 · Jun 6 · $125 · Kili base layer |
+| Contractor bags 42-gal (20 pack, Ultrasac) | Matt & Lynn | Amazon Order #112-5759731-0857862 · Jun 11 · $15.59 · porter duffel liner / rain protection |
+| REI Sahara Convertible Pants (Armadillo Taupe, 30×32) | Matt | REI Order #A401709861 · Jun 11 · $66.93 · second safari pants ✓ |
+| REI Sahara Convertible Pants (Stone Blue, Size 0) | Lynn | REI Order #A401709861 · Jun 11 · $89.85 · second safari pants — muted dusty blue, neutral enough ✓ |
+| REI Sahara Shade Hoodie (Black Heather, XS) | Lynn | REI Order #A401709861 · Jun 11 · $59.95 · heathered dark gray — neutral ✓ |
+| REI Sahara Shade T-Shirt (Stratus Gray Heather, M) | Matt | REI Order #A401709861 · Jun 11 · $39.95 · safari/Kili base layer ✓ |
+| REI Sahara Shade T-Shirt (Lunar Slate Heather, XS) | Lynn | REI Order #A401709861 · Jun 11 · $39.95 · safari/base layer ✓ |
+| REI Sahara Shade T-Shirt (Lavender Sky Heather, XS) | Lynn | REI Order #A401709861 · Jun 11 · $39.95 · Zanzibar/casual wear |
+| Travel underwear — bikini briefs ×5 | Lynn | Gap · Jun 11 · $37.22 (incl. CT tax) |
+| SanDisk 256GB Extreme microSD UHS-I Card (245MB/s read) | Matt | Amazon Order #111-7364583-2252231 · May 29 · $69.12 · GoPro Mission 1 Pro storage ✓ |
+| Insect repellent (DEET) | Matt & Lynn | Already owned ✓ |
+| Universal travel adapter (Type G) | Matt & Lynn | Already owned ✓ |
+| Rashguard | Matt & Lynn | Already owned ✓ · Mnemba Atoll dive + snorkeling sun protection |
+| Dive mask | Matt & Lynn | Already owned ✓ · bringing own · rental masks don't fit well |
+| Dive gloves | Matt & Lynn | Already owned ✓ · Mnemba Atoll dive |
+
+### 🧴 Everyday Toiletries — Have It
+
+| Item | Who |
+|---|---|
+| Sunscreen | Both |
+| Cleansing wipes | Both |
+| Hand sanitizer | Both |
+| Toothpaste | Both |
+| Toothbrush ×2 | Both |
 
 ### 🟡 Decided Against / Not Needed
 
@@ -211,8 +252,8 @@
 | AAA lithium batteries | Both | 2 sets of 3 · Energizer Ultimate Lithium · summit night headlamp backup |
 | Eagle Creek Undercover Neck Wallet Deluxe ×2 (Khaki) | Matt & Lynn | Amazon Order #112-1844732-0503411 · Jun 6 · $37.22 · arriving Jun 10 |
 | Celestron Nature DX ED Glass Binoculars 8×42 | Lynn (shared) | ED glass · ideal spec for safari · excellent low-light performance for dawn game drives · one pair sufficient |
-| Safari shirts (long-sleeve, neutral) | Matt & Lynn | 2–3 each · khaki/tan/olive/grey only · Columbia PFG or ExOfficio · moisture-wicking · to assess |
-| Safari pants (lightweight, neutral) | Matt & Lynn | Khaki/tan/olive · Columbia Silver Ridge or REI Sahara · ~$50–65 · needed for both |
+| REI Sahara Shade Hoodies ✅ | Matt (Olive M) & Lynn (Harvest Sage XS) | REI Purchase #8177 · Jun 6 · $59.95 each · PURCHASED |
+| REI Sahara Convertible Pants ✅ | Matt (Asphalt 30×32) & Lynn (Burlap Size 0) | REI Purchase #8177 · Jun 6 · ~$90 each · PURCHASED |
 | Buff / neck gaiter (neutral color) | Matt & Lynn | ✅ Have it |
 | Swimwear | Matt & Lynn | ✅ Have it |
 | Rashguard | Matt & Lynn | ✅ Have it |
@@ -220,6 +261,13 @@
 | Light casual resort wear | Matt & Lynn | ✅ Have it |
 | Dive masks | Matt & Lynn | Bringing own masks · rental masks don't fit well |
 | Electronics dust bag | Matt | GoPro Mission 1 Pro is dust/waterproof — not needed · use ziplock for any non-sealed items |
+| NEMO Fillo Elite Pillow (Black Pearl/Citron) ×2 | Matt & Lynn | REI Order #A401721450 · Jun 11 · $59.95 each · arriving Jun 15 ✓ |
+| Pee bottle — collapsible with disposable bags ×2 | Matt (+ spare) | Amazon Order #112-9030559-7569821 · Jun 11 · $15.99 · arriving Jun 12 ✓ |
+| Teamoy Pee Cloth 3-pack (reusable) | Lynn | Amazon Order #112-9030559-7569821 · Jun 11 · $13.99 · arriving Jun 15 · female urination solution for mountain ✓ |
+| ExOfficio Give-N-Go 2.0 Brief (Black, Large) ×2 | Matt | Amazon Order #112-9030559-7569821 · Jun 11 · $26.50 each · arriving Jun 12 ✓ |
+| Sea to Summit Wilderness Wipes 2-pack (24 wipes total) | Matt & Lynn | Amazon Order #112-9030559-7569821 · Jun 11 · $13.90 · arriving Jun 17–21 ✓ |
+| Reef-safe sunscreen (mineral / zinc oxide) | Matt & Lynn | Required at Mnemba Atoll marine reserve · small tube fine |
+| SPF lip balm | Matt & Lynn | Essential for high-altitude Kili sun · any pharmacy |
 
 ---
 
@@ -275,17 +323,17 @@
 
 **Porter duffel limit: 15kg / 33 lbs each**
 
-**Matt's duffel: ~25.9 lbs / 11.7kg — 7.1 lbs headroom ✓**  
-**Lynn's duffel: ~24.9 lbs / 11.3kg — 8.1 lbs headroom ✓**  
+**Matt's duffel: ~26.6 lbs / 12.1kg — 6.4 lbs headroom ✓** (added: pillow 0.22 lbs · pee bottle 0.18 lbs · towel 0.26 lbs)  
+**Lynn's duffel: ~25.4 lbs / 11.5kg — 7.6 lbs headroom ✓** (added: pillow 0.22 lbs · towel 0.26 lbs)  
 **Matt's daypack: ~15.7 lbs (heavy due to water weight — unavoidable)**
 
-*Note: Includes hand/toe warmers split across duffels (0.8 lbs Matt · 0.7 lbs Lynn). Both well under 33 lb porter limit.*
+*Note: Includes hand/toe warmers split across duffels. Both well under 33 lb porter limit.*
 
 ---
 
 ## BUDGET
 
-### Confirmed Paid: ~$17,535
+### Confirmed Paid: ~$19,477
 
 | Date | Item | Amount | Notes |
 |---|---|---|---|
@@ -299,6 +347,8 @@
 | May 6, 2026 | Telehealth consult — Dr. Chesky | $211.08 | All Rx obtained |
 | May 10, 2026 | REI Norwalk — Down sweaters ×2, rain jacket, rain pant | $792.91 | After exchanges |
 | May 16, 2026 | REI Norwalk — Lowa boots, socks ×8, rain pant, jacket | $262.78 | After exchange credit |
+| May 2026 | GoPro Mission 1 Pro Dive Bundle + Anti-Fog, Case, Housing, Pole · Order #NA06388080 | $882.69 | GoPro.com · includes 1yr Premium subscription |
+| May 2026 | GoPro Enduro 2 Batteries ×2 · Order #NA06408483 | $59.53 | GoPro.com |
 | May 19, 2026 | grinderPUNCH sunglasses — Matt | $24.45 | Amazon |
 | May 24, 2026 | World Nomads Explorer Insurance | $530.40 | Policy# WNUSA26546377 |
 | May 24, 2026 | REI Order #A400710645 — headlamps ×2, bladders, tubes ×2, Nalgenes ×2 | $262.28 | 25% off sale |
@@ -312,6 +362,14 @@
 | Jun 6, 2026 | Black Diamond Mercury Mittens — Lynn · REI Order #A401463106 | $148.84 | Amex ***1005 · delivery Jun 13 |
 | Jun 6, 2026 | Eagle Creek Neck Wallets ×2 · Amazon Order #112-1844732-0503411 | $37.22 | Arriving Jun 10 |
 | Jun 6, 2026 | Energizer AAA batteries + Welnove blister bandages · Amazon Order #112-9584081-1248254 | $54.73 | Arriving overnight |
+| Jun 6, 2026 | REI Purchase #8177 in-store — safari pants ×2, Sahara hoodies ×2, women's T-shirt, Smartwool base layer, kids' shirt | $520.56 | REI Norwalk · $46.47 member reward accrued |
+| Jun 11, 2026 | Contractor bags 42-gal 20-pack · Amazon Order #112-5759731-0857862 | $15.59 | Porter duffel liner / rain protection · arrives Jun 12 |
+| Jun 11, 2026 | REI Order #A401709861 — safari pants ×2 (Matt + Lynn), hoodie (Lynn), T-shirts ×3 (Matt + Lynn ×2) | $357.97 | Arriving Jun 15–16 |
+| Jun 11, 2026 | REI Order #A401721450 — NEMO Fillo Elite Pillows ×2 | $127.51 | Arriving Jun 15 |
+| Jun 11, 2026 | Amazon Order #112-9030559-7569821 — pee bottles, ExOfficio briefs ×2, Sea to Summit wipes, pee cloths (Lynn) | $103.03 | Various arrival dates Jun 12–21 |
+| Jun 11, 2026 | Gap — bikini briefs ×5 (Lynn) | $37.22 | Incl. CT tax |
+| Jun 11, 2026 | Tanzania e-Visas ×2 | $200.00 | $100 each · Matt (26UR-N06V-LI05) + Lynn (26GE-K06K-HS05) |
+| May 29, 2026 | SanDisk 256GB Extreme microSD · Amazon Order #111-7364583-2252231 | $69.12 | GoPro Mission 1 Pro storage · delivered May 30 |
 
 ### Still Owed
 
@@ -319,11 +377,11 @@
 |---|---|---|---|
 | Safari balance | ~$2,982 | Jul 13 on arrival | CASH — confirmed with Todd May 16 |
 | Zanzibar hotels | $1,314 | On trip | Tembo House $314 + Infinity Beach $1,000 |
-| Tanzania e-Visas | $200 | Mid-June | $100 each · visa.immigration.go.tz |
-| Mnemba Atoll dive | $150–300 | Book June | Pre-book One Ocean/Fun Divers/Spanish Dancer |
+| Tanzania e-Visas | $200 | ✅ Paid Jun 11 | $100 each · awaiting approval |
+| Mnemba Atoll dive | $150–300 | Book June | One Ocean Diving is directly adjacent to Infinity Beach hotel · pre-book with them |
 | Stone Town spice tour | $50–100 | Book June | |
 | Porter tips | ~$600 | Jul 13 | USD cash · ~$250–300/person at Mweka Gate |
-| Remaining gear | ~$100–150 | Now | Lynn mitts + blister kits + AAA batteries |
+| Reef-safe sunscreen + SPF lip balm | ~$20–30 | Now | Pharmacy or Amazon |
 | Prescriptions (typhoid exact) | TBD | — | Confirm exact Costco amount |
 | On-trip spending | ~$450–800 | Jul 3–25 | Meals, souvenirs, contingency |
 
@@ -343,25 +401,25 @@ All payments in Tanzania must be in USD. Bills must be **post-2013 issue** (chec
 |---|---|---|
 | Safari balance | $2,982 | CASH — confirmed with Todd · due Jul 13 on arrival |
 | Porter tips | ~$600 | ~$250–300/person · USD · Mweka Gate Jul 13 |
+| Safari guide/driver tips | ~$150 | ~$15–20/day × 5 safari days · give to guide on last day (Jul 17) |
 | Zanzibar hotels | $1,314 | Tembo House $314 + Infinity Beach $1,000 · confirm card accepted when booking |
 | Mnemba Atoll dive | ~$225 | Mid-estimate · confirm payment method when booking |
 | Stone Town spice tour | ~$75 | Cash expected |
 | On-trip spending | ~$600 | Meals, local transport, souvenirs, contingency |
-| **Total** | **~$5,796** | **Bring $5,500 in cash · use card where accepted to reduce cash carried** |
+| **Total** | **~$5,946** | **Bring ~$6,000 in cash · use card where accepted to reduce cash carried** |
 
 ### Denomination plan
 
 - **$100 bills** (~$4,000) — safari balance and hotel payments
-- **$50 bills** (~$900) — remaining larger purchases
-- **$20 bills** (~$600) — porter tips and daily spending · pre-sort into two tip envelopes before departure
+- **$50 bills** (~$1,000) — remaining larger purchases
+- **$20 bills** (~$1,000) — porter tips ($600), guide tips ($150), and daily spending · pre-sort into three tip envelopes before departure (two porter + one guide)
 
 ### Withdrawal plan — online banking (no branch access)
 
 ATM-only strategy: check your daily ATM limit with your bank and request a temporary increase if possible. Standard limits are $300–500/day; some premium accounts allow $1,000–2,000.
 
-**Option A — standard limit (~$500/day):** Start June 9 · withdraw daily or every-other-day for ~12 days = ~$5,500 by June 20.
-
-**Option B — elevated limit (~$1,000/day):** Start June 16 · 6 withdrawals over 10 days = ~$5,500 by June 26.
+✅ **ATM withdrawals begun** (as of Jun 11) — target revised to ~$6,000 to cover added guide tips.  
+Continue withdrawals until you reach ~$6,000. If $500/day limit, ~5–6 more withdrawals needed from Jun 11.
 
 **Tip:** Charles Schwab checking reimburses all ATM fees worldwide and has a $1,000 daily ATM limit — worth opening if you don't already have it, especially for on-trip ATM access in Zanzibar as backup.
 
@@ -433,28 +491,34 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 - [x] Tanzania e-Visa — Lynn · Application submitted Jun 5 · App ID: 26GE-K06K-HS05 · awaiting approval ✓
 - [ ] Check both visa approval statuses around June 14 (Todd & Victoria got theirs in 9 days) · print both when approved
 - [ ] Matt: Hep B Shot 2 — scheduled June 12
-- [ ] Pre-book Mnemba Atoll scuba dive Jul 21 (One Ocean, Fun Divers, or Spanish Dancer Divers)
+- [ ] Pre-book Mnemba Atoll scuba dive — **WhatsApp inquiry sent Jun 11** to One Ocean Diving (+255 774 310 003) · requested Jul 21 or 22 · both PADI Open Water certified · awaiting confirmation · confirm glove policy and payment method when they respond
 - [ ] Book Stone Town spice tour — Jul 19
-- [ ] Check ATM daily withdrawal limit with online bank · request temporary increase if possible (do this ASAP)
-- [ ] Begin ATM cash withdrawals — target $5,500 total · start June 9 if $500/day limit, June 16 if $1,000/day limit
+- [x] Check ATM daily withdrawal limit ✓
+- [x] Begin ATM cash withdrawals — ✅ begun Jun 11 · continue to ~$6,000 total (revised for guide tips)
 - [ ] Sort and count cash before packing — prepare two tip envelopes ($300 in $20s) and separate safari balance ($2,982 in $100s)
 - [ ] Notify credit cards — Tanzania Jul 3–25
+- [ ] Kenya Airways business class upgrade — NBO→JFK leg (Res Y8XF7X) · Kenya Airways upgrade bid window typically opens 30–60 days before departure · flight departs ~Jul 25 · check KQ upgrade bid portal around late June
 - [ ] Download offline maps (Maps.me or Google offline)
 - [ ] Full gear shakedown — weigh duffels (must be under 15kg / 33 lbs)
 - [ ] Confirm electrolyte supply with Todd
 - [ ] Confirm Summit Lodge will hold cash in front desk safe during Kilimanjaro climb (Jul 6–12) — ask ClimbKili/Tiffany Watson to arrange on checkout morning
 - [ ] Confirm safari transfer method with Todd/ClimbKili — check if any legs use small bush planes requiring soft-sided bags (15kg limit) · hard-shell suitcase may not be allowed
 - [x] Binoculars confirmed — Celestron Nature DX ED 8×42 · ideal for safari ✓
-- [ ] Purchase safari pants — Matt & Lynn · khaki/tan/olive · Columbia Silver Ridge or REI Sahara · ~$50–65 each
-- [ ] Assess and purchase safari shirts if needed — 2–3 each · long-sleeve · neutral colors · Columbia PFG or ExOfficio
+- [x] Purchase safari pants — REI Sahara Convertible · Matt (Asphalt 30×32) · Lynn (Burlap Size 0) · REI Purchase #8177 · Jun 6 ✓
+- [x] Safari shirts purchased — REI Sahara Shade Hoodies · Matt (Olive Ridge Heather M) · Lynn (Harvest Sage Heather XS) · REI Purchase #8177 · Jun 6 ✓
 - [x] Matt: typhoid course completed ✓
 - [ ] Lynn: continue breaking in new boots — back-to-back trail hikes
+- [ ] Begin packing planning — assign items to carry-on vs. duffel vs. daypack · confirm duffel weights under 15kg / 33 lbs · see packing strategy notes
 
 ### 🛒 Gear Still to Buy
 
 - [x] Lynn summit mitts — Black Diamond Mercury Mittens · REI Order #A401463106 · Jun 6 · $148.84 · delivery Jun 13 ✓
 - [x] Blister bandages — Welnove Gel Hydrocolloid 21ct · Amazon Order #112-9584081-1248254 · Jun 6 ✓
 - [x] AAA lithium batteries — Energizer Ultimate Lithium 24ct · Amazon Order #112-9584081-1248254 · Jun 6 · arriving overnight ✓
+- [x] Safari pants — REI Sahara Convertible · Matt (Asphalt 30×32) + Lynn (Burlap Size 0) · REI Purchase #8177 · Jun 6 ✓
+- [x] Safari shirts — REI Sahara Shade Hoodies · Matt (Olive Ridge M) + Lynn (Harvest Sage XS) · REI Purchase #8177 · Jun 6 ✓
+- [x] Smartwool Intraknit Merino Base Layer Bottoms (Black M) — Matt · REI Purchase #8177 · Jun 6 ✓
+- [x] Contractor bags (porter duffel liner) — Ultrasac 42-gal 20-pack · Amazon Order #112-5759731-0857862 · Jun 11 · $15.59 · arrives Jun 12 ✓
 
 ### 📋 Pre-departure (July 1–3)
 
@@ -487,4 +551,4 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 ## KNOWN ISSUES IN INDEX.HTML
 *(To be fixed on next Claude Code push)*
 
-None — all 5 issues resolved 2026-06-06
+*None — all issues deployed Jun 11, 2026*
