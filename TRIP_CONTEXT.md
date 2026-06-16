@@ -1,6 +1,6 @@
 # Tanzania Trip 2026 — Trip Context
 ## Source of truth for Cowork updates and Claude Code deployments
-## Last updated: 2026-06-11 · No known issues — all deployed
+## Last updated: 2026-06-16 · 0 known issues · all current as of Jun 16 push
 
 ---
 
@@ -65,14 +65,23 @@
 
 | Dates | Property | Location | Notes |
 |---|---|---|---|
-| Jul 4–5 | Summit Lodge Arusha | Arusha | ClimbKili base · 2 nights |
-| Jul 6–12 | Mountain camps (Lemosho) | Kilimanjaro | 7 nights on mountain |
+| Jul 4–5 | Summit Lodge Arusha | Arusha | ClimbKili base · 2 nights · Jul 5 = "DO GOOD DAY" — orphanage visit outside Arusha · organized by safari company owner · group may bring duffel bags of supplies · details still pending from safari guide as of Jun 13 · call with Todd planned to discuss |
+| Jul 6 | Mti Mkubwa Camp | Kilimanjaro | Day 1 · Londorossi Gate → Mti Mkubwa |
+| Jul 7 | Shira Camp | Kilimanjaro | Day 2 · Mti Mkubwa → Shira Camp |
+| Jul 8 | Moir Camp | Kilimanjaro | Day 3 · Shira → Moir Camp |
+| Jul 9 | Barranco Camp | Kilimanjaro | Day 4 · Moir → Barranco Camp |
+| Jul 10 | Karanga Camp | Kilimanjaro | Day 5 · Barranco → Karanga Camp |
+| Jul 11 | Kosovo Camp | Kilimanjaro | Day 6 · Karanga → Kosovo Camp (high camp) |
+| Jul 12 | Mweka Camp | Kilimanjaro | Day 7 · Kosovo → SUMMIT → Mweka Camp (descent) |
 | Jul 13 | Villa Maua — "House of Flowers" | Arusha | Post-summit · villamaua.co.tz |
 | Jul 14 | The Retreat at Ngorongoro | Ngorongoro | 1 night |
 | Jul 15–16 | Lala Salama Serengeti Luxury Camp | Central Serengeti | 2 nights · lalasalamaserengeti.com |
 | Jul 17 | Lake Masek Tented Camp | Ndutu | 1 night · watering hole camp |
 | Jul 18–19 | Tembo House Hotel | Stone Town, Zanzibar | 2 nights · arrive late Jul 18 |
 | Jul 20–24 | Infinity Beach Boutique Hotel & Spa | Matemwe, Zanzibar | 4 nights · Conf# 5891793900 · Check-in Jul 20 2PM · Check-out Jul 24 11:30AM |
+| Jul 21 | Mnemba Atoll dive (One Ocean) | Matemwe | Deposit paid Jun 13 · Ref ONOC-1304081 · date TBC (Jul 21 or 22) |
+| Jul 22 | Free day | Matemwe | Beach / relaxation |
+| Jul 23 | Possible day trip to Paje | SE Zanzibar | Tentative per Todd — kitesurfing village on southeast coast |
 
 ---
 
@@ -96,7 +105,7 @@
 | Document | Matt | Lynn |
 |---|---|---|
 | Passport | Valid past Jan 25, 2027 ✓ | Valid past Jan 25, 2027 ✓ |
-| Tanzania e-Visa | 🟡 Application submitted Jun 5 · App ID: **26UR-N06V-LI05** · awaiting approval | 🟡 Application submitted Jun 5 · App ID: **26GE-K06K-HS05** · awaiting approval |
+| Tanzania e-Visa | ✅ **APPROVED Jun 16** · App ID: **26UR-N06V-LI05** · Control# 991098899026 · Multiple Entry E3 · Valid Jul 4, 2026–Jul 4, 2027 | ✅ **APPROVED Jun 16** · App ID: **26GE-K06K-HS05** · Control# 991098899141 · Multiple Entry E3 · Valid Jul 4, 2026–Jul 4, 2027 |
 
 **Portal:** visa.immigration.go.tz · $100 per person  
 **Expected approval:** ~June 14 (based on 9-day turnaround for Todd & Victoria in the group)  
@@ -150,7 +159,7 @@
 | Yellow Fever | ✅ Not required | ✅ Not required |
 | Typhoid | ✅ Completed | ✅ Completed |
 | Hepatitis A | — | ✅ Shot 1 May 6 · Shot 2 November |
-| Hepatitis B | 🟡 Shot 1 May 6 · Shot 2 June 12 (scheduled) · Shot 3 November | ✅ Prior immunity confirmed — no shots needed |
+| Hepatitis B | ✅ Shot 1 May 6 · Shot 2 Jun 12 ✓ · Shot 3 November | ✅ Prior immunity confirmed — no shots needed |
 
 ---
 
@@ -333,7 +342,7 @@
 
 ## BUDGET
 
-### Confirmed Paid: ~$19,477
+### Confirmed Paid: ~$19,648
 
 | Date | Item | Amount | Notes |
 |---|---|---|---|
@@ -370,15 +379,16 @@
 | Jun 11, 2026 | Gap — bikini briefs ×5 (Lynn) | $37.22 | Incl. CT tax |
 | Jun 11, 2026 | Tanzania e-Visas ×2 | $200.00 | $100 each · Matt (26UR-N06V-LI05) + Lynn (26GE-K06K-HS05) |
 | May 29, 2026 | SanDisk 256GB Extreme microSD · Amazon Order #111-7364583-2252231 | $69.12 | GoPro Mission 1 Pro storage · delivered May 30 |
+| Jun 13, 2026 | One Ocean Zanzibar — Mnemba Atoll dive deposit · Ref ONOC-1304081 | $170.46 | $165 + $5.46 surcharge · Amex · PesaPal Conf# 616623170115 · Payment# 1541042606024719 · "Deposit for guided scuba for two divers on Jul 2x" (date truncated in email) |
 
 ### Still Owed
 
 | Item | Amount | When | Notes |
 |---|---|---|---|
 | Safari balance | ~$2,982 | Jul 13 on arrival | CASH — confirmed with Todd May 16 |
-| Zanzibar hotels | $1,314 | On trip | Tembo House $314 + Infinity Beach $1,000 |
-| Tanzania e-Visas | $200 | ✅ Paid Jun 11 | $100 each · awaiting approval |
-| Mnemba Atoll dive | $150–300 | Book June | One Ocean Diving is directly adjacent to Infinity Beach hotel · pre-book with them |
+| Zanzibar hotels | ~$1,314 | On trip | Tembo House $314 (cards accepted ✓ · Todd booked early rate) + Infinity Beach $1,000 |
+| Tanzania e-Visas | $200 | ✅ Paid Jun 11 · ✅ Approved Jun 16 | $100 each · Matt Control# 991098899026 · Lynn Control# 991098899141 |
+| Mnemba Atoll dive | ~$150–160 remaining | Jul 21 or 22 | One Ocean Matemwe · deposit $170.46 PAID Jun 13 (Ref ONOC-1304081 · Amex) · balance (refresher + MCF) due on arrival · **card accepted · no cash needed** |
 | Stone Town spice tour | $50–100 | Book June | |
 | Porter tips | ~$600 | Jul 13 | USD cash · ~$250–300/person at Mweka Gate |
 | Reef-safe sunscreen + SPF lip balm | ~$20–30 | Now | Pharmacy or Amazon |
@@ -402,8 +412,8 @@ All payments in Tanzania must be in USD. Bills must be **post-2013 issue** (chec
 | Safari balance | $2,982 | CASH — confirmed with Todd · due Jul 13 on arrival |
 | Porter tips | ~$600 | ~$250–300/person · USD · Mweka Gate Jul 13 |
 | Safari guide/driver tips | ~$150 | ~$15–20/day × 5 safari days · give to guide on last day (Jul 17) |
-| Zanzibar hotels | $1,314 | Tembo House $314 + Infinity Beach $1,000 · confirm card accepted when booking |
-| Mnemba Atoll dive | ~$225 | Mid-estimate · confirm payment method when booking |
+| Zanzibar hotels | ~$1,314 | Tembo House $314 (cards accepted ✓) + Infinity Beach $1,000 |
+| Mnemba Atoll dive balance | ~$150–160 | Deposit $170.46 paid Jun 13 · balance (refresher + MCF) due on arrival · **card accepted · no cash needed** |
 | Stone Town spice tour | ~$75 | Cash expected |
 | On-trip spending | ~$600 | Meals, local transport, souvenirs, contingency |
 | **Total** | **~$5,946** | **Bring ~$6,000 in cash · use card where accepted to reduce cash carried** |
@@ -487,19 +497,32 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 
 ### 🟡 June 2026
 
-- [x] Tanzania e-Visa — Matt · Application submitted Jun 5 · App ID: 26UR-N06V-LI05 · awaiting approval ✓
-- [x] Tanzania e-Visa — Lynn · Application submitted Jun 5 · App ID: 26GE-K06K-HS05 · awaiting approval ✓
-- [ ] Check both visa approval statuses around June 14 (Todd & Victoria got theirs in 9 days) · print both when approved
-- [ ] Matt: Hep B Shot 2 — scheduled June 12
-- [ ] Pre-book Mnemba Atoll scuba dive — **WhatsApp inquiry sent Jun 11** to One Ocean Diving (+255 774 310 003) · requested Jul 21 or 22 · both PADI Open Water certified · awaiting confirmation · confirm glove policy and payment method when they respond
+- [x] Tanzania e-Visa — Matt · App ID: 26UR-N06V-LI05 · **APPROVED Jun 16** · Control# 991098899026 ✓
+- [x] Tanzania e-Visa — Lynn · App ID: 26GE-K06K-HS05 · **APPROVED Jun 16** · Control# 991098899141 ✓
+- [ ] Print both Visa Grant Notices — bring to immigration officer at JRO entry point
+- [x] Matt: Hep B Shot 2 — completed June 12 ✓
+- [x] Pre-book Mnemba Atoll scuba dive — **DEPOSIT PAID Jun 13** · Ref ONOC-1304081 · $170.46 Amex · One Ocean Matemwe · awaiting date confirmation (Jul 21 or 22) and snorkeling availability response
+  - **Pricing confirmed:** $110/diver + $20 gear rental = $130/person · plus Marine Conservation Fee (amount TBD) · Visa/MC accepted with 3% surcharge · USD 2009+ or Tanzanian Shillings
+  - **Refresher required:** Last dive April 2025 · 15 months ago · One Ocean requires refresher after 12+ months · $25/person · can be done the day before the dive → **Jul 20 refresher + Jul 21 dive** is the likely plan
+  - **Schedule:** Meet at One Ocean Matemwe 8:00am · 2 dives at Mnemba · back ~1:30pm · free transfers from Matemwe area hotels ✓
+  - **Flying rule:** Must wait 18 hours after 2 dives · if diving Jul 21 or 22, both are well clear of Jul 24 departure ✓
+  - **Snorkelers:** Asked if 2–4 friends can snorkel on same trip · One Ocean requires minimum 4 snorkelers to run a trip · awaiting response
+  - **Cancellation policy:**
+    - Cancel with 24+ hours notice → full refund
+    - Cancel within 24 hours or no-show → charged full rate
+    - Cannot equalise, personal reasons, or late arrival → no refund
+    - Bad weather alone is NOT a valid cancellation reason unless safety is compromised
+    - Early departure from trip → transfer fee applies
+    - Refunds for last-minute cancellations only if initiated by One Ocean staff
 - [ ] Book Stone Town spice tour — Jul 19
 - [x] Check ATM daily withdrawal limit ✓
 - [x] Begin ATM cash withdrawals — ✅ begun Jun 11 · continue to ~$6,000 total (revised for guide tips)
 - [ ] Sort and count cash before packing — prepare two tip envelopes ($300 in $20s) and separate safari balance ($2,982 in $100s)
 - [ ] Notify credit cards — Tanzania Jul 3–25
-- [ ] Kenya Airways business class upgrade — NBO→JFK leg (Res Y8XF7X) · Kenya Airways upgrade bid window typically opens 30–60 days before departure · flight departs ~Jul 25 · check KQ upgrade bid portal around late June
+- [ ] Kenya Airways business class upgrade — NBO→JFK leg (Res Y8XF7X) · **last-minute process, not advance bidding** · on Jul 25 in Nairobi: go to kenya-airways.com → Manage Booking → Upgrade Flight → enter Y8XF7X · submit bid 7–10 hrs before departure OR ask at NBO check-in counter · KQ notifies ~12 hrs before departure if accepted · note: baggage allowance stays at Economy even if upgraded
 - [ ] Download offline maps (Maps.me or Google offline)
 - [ ] Full gear shakedown — weigh duffels (must be under 15kg / 33 lbs)
+- [ ] **Schedule call with Todd** — several open items to discuss: DO GOOD DAY orphanage supplies, electrolyte supply, safari transfer method, any other trip logistics
 - [ ] Confirm electrolyte supply with Todd
 - [ ] Confirm Summit Lodge will hold cash in front desk safe during Kilimanjaro climb (Jul 6–12) — ask ClimbKili/Tiffany Watson to arrange on checkout morning
 - [ ] Confirm safari transfer method with Todd/ClimbKili — check if any legs use small bush planes requiring soft-sided bags (15kg limit) · hard-shell suitcase may not be allowed
@@ -508,7 +531,16 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 - [x] Safari shirts purchased — REI Sahara Shade Hoodies · Matt (Olive Ridge Heather M) · Lynn (Harvest Sage Heather XS) · REI Purchase #8177 · Jun 6 ✓
 - [x] Matt: typhoid course completed ✓
 - [ ] Lynn: continue breaking in new boots — back-to-back trail hikes
-- [ ] Begin packing planning — assign items to carry-on vs. duffel vs. daypack · confirm duffel weights under 15kg / 33 lbs · see packing strategy notes
+- [ ] **Gear testing (next 2 weeks)** — verify all purchased gear works properly before departure:
+  - [ ] Test headlamps (Petzl Actik Core) — charge and test both
+  - [ ] Test CamelBak bladders + insulated tubes — fill, check for leaks, test bite valves
+  - [ ] Test GoPro Mission 1 Pro + SanDisk 256GB SD card — record test footage, verify waterproofing
+  - [ ] Test Nitecore NB20000 power bank — charge fully, test output ports
+  - [ ] Test NEMO Fillo Elite pillows — inflate/deflate both
+  - [ ] Try on all new clothing (safari pants, shirts, hoodies, base layers) — confirm fit and comfort
+  - [ ] Break in any items that need it (Lynn: boots ongoing)
+  - [ ] Test pee bottles (Matt) and pee cloths (Lynn) — familiarize before mountain
+- [ ] Begin packing planning — assign items to carry-on vs. duffel vs. daypack · confirm duffel weights under 15kg / 33 lbs
 
 ### 🛒 Gear Still to Buy
 
@@ -551,4 +583,4 @@ Store cash in two separate locations while traveling (e.g., money belt + locked 
 ## KNOWN ISSUES IN INDEX.HTML
 *(To be fixed on next Claude Code push)*
 
-*None — all issues deployed Jun 11, 2026*
+*(none)*
